@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "surface": "#faf9f6",
+              "surface-dim": "#dbdad7",
+              "surface-bright": "#faf9f6",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f4f3f1",
+              "surface-container": "#efeeeb",
+              "surface-container-high": "#e9e8e5",
+              "surface-container-highest": "#e3e2e0",
+              "on-surface": "#3d2b1f",
+              "on-surface-variant": "#504535",
+              "inverse-surface": "#2f312f",
+              "inverse-on-surface": "#f2f1ee",
+              "outline": "#827563",
+              "outline-variant": "#d4c4af",
+              "surface-tint": "#7d5700",
+              "primary": "#7d5700",
+              "on-primary": "#ffffff",
+              "primary-container": "#c68e17",
+              "on-primary-container": "#422c00",
+              "inverse-primary": "#fabc46",
+              "secondary": "#006e0c",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#8ff780",
+              "on-secondary-container": "#00730d",
+              "tertiary": "#705a4c",
+              "on-tertiary": "#ffffff",
+              "tertiary-container": "#ad9383",
+              "on-tertiary-container": "#3f2c20",
+              "error": "#ba1a1a",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-error-container": "#93000a",
+              "primary-fixed": "#ffdeab",
+              "primary-fixed-dim": "#fabc46",
+              "on-primary-fixed": "#271900",
+              "on-primary-fixed-variant": "#5f4100",
+              "secondary-fixed": "#92fa83",
+              "secondary-fixed-dim": "#77dd6a",
+              "on-secondary-fixed": "#002201",
+              "on-secondary-fixed-variant": "#005307",
+              "tertiary-fixed": "#fbddca",
+              "tertiary-fixed-dim": "#dec1af",
+              "on-tertiary-fixed": "#28180d",
+              "on-tertiary-fixed-variant": "#574335",
+              "background": "#faf9f6",
+              "on-background": "#3d2b1f"
+            },
+            "borderRadius": {
+              "sm": "0.25rem",
+              "DEFAULT": "0.5rem",
+              "md": "0.5rem",
+              "lg": "1rem",
+              "xl": "1.5rem",
+              "full": "9999px"
+            },
+            "spacing": {
+              "base": "8px",
+              "xs": "0.5rem",
+              "sm": "1rem",
+              "md": "1.5rem",
+              "lg": "3rem",
+              "xl": "5rem",
+              "gutter": "24px",
+              "margin": "32px",
+              "margin-mobile": "16px",
+              "margin-desktop": "64px"
+            },
+            "fontFamily": {
+              "display-lg": ["Noto Serif JP", "serif"],
+              "display-lg-mobile": ["Noto Serif JP", "serif"],
+              "headline-xl": ["Noto Serif JP", "serif"],
+              "headline-lg": ["Noto Serif JP", "serif"],
+              "headline-md": ["Noto Serif JP", "serif"],
+              "headline-sm": ["Noto Serif JP", "serif"],
+              "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+              "body-md": ["Plus Jakarta Sans", "sans-serif"],
+              "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+              "label-lg": ["Plus Jakarta Sans", "sans-serif"],
+              "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+              "headline-lg-mobile": ["Noto Serif JP", "serif"],
+              "headline-xl-mobile": ["Noto Serif JP", "serif"]
+            },
+            "fontSize": {
+              "display-lg": ["48px", {"lineHeight": "64px", "fontWeight": "700", "letterSpacing": "-0.02em"}],
+              "display-lg-mobile": ["32px", {"lineHeight": "44px", "fontWeight": "700"}],
+              "headline-xl": ["40px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+              "headline-lg": ["32px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "600"}],
+              "headline-md": ["24px", {"lineHeight": "36px", "fontWeight": "600"}],
+              "headline-sm": ["20px", {"lineHeight": "1.5", "fontWeight": "600"}],
+              "body-lg": ["18px", {"lineHeight": "30px", "fontWeight": "400"}],
+              "body-md": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+              "body-sm": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+              "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+              "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600", "letterSpacing": "0.05em"}],
+              "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+              "headline-xl-mobile": ["30px", {"lineHeight": "1.3", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.writing-vertical {
+    writing-mode: vertical-rl
+    }
+.hero-text-shadow {
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3)
+    }
+.paper-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCK4laZSuwKfU0B30GBpEKVWnQkXZIl2lNKPVLTjCO6OIYVG8CT6g3xdkxt2nnnjxT_hBQElTWjeX2xlPiMlsfS1cv6P0cq1HR8_DTPoL1ro463NypibZ1iilC-DwSprt5ytlPlAJTRwKunFd7QyaQapCDNt7aockniSSmqVpwHc4FizoEpnfbge2v8t62KlvAKfWadkDCX65dFiZtQd5BAfoAQMLn-Ts22cErLBf88k55hWl-VIwNMPxPmtxF4MlFsVLO-QTIiMAI)
+    }</style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="w-full sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-outline/10">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base max-w-screen-xl mx-auto">
+<div class="flex items-center gap-sm">
+<img alt="夢前茶屋" class="h-10 w-10 object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ugMYXht7_ivmKbBk-hoq4BIMcjzgYk90qFuSGTdNJqETM-bLCFSpnnaLG62Pv3W-jkNJVcCRl1-2sppjMh4S0PbV8i15t6Xvk4KM_wK-XASUU3UwbclX3NTTwzODsAa8jBiq1k4NhHKcYdvyqJVEwvXIy9Uee0lCLCf1WGdHm8O6cqVVmesiZGz9YT19hBD5gzy7Sc4Yi9NGnn3aujUt1hswn7BWslmi2GpU3kw2ppIbV0ODvlWS1QRelw"/>
+<span class="font-headline-md text-headline-md text-primary tracking-widest">夢前茶屋</span>
+</div>
+<div class="hidden md:flex items-center gap-lg">
+<a class="font-headline-sm text-headline-sm text-secondary border-b-2 border-secondary pb-1 transition-colors duration-300" href="#">ホーム</a>
+<a class="font-headline-sm text-headline-sm text-on-surface hover:text-secondary transition-colors duration-300" href="#">おしながき</a>
+<a class="font-headline-sm text-headline-sm text-on-surface hover:text-secondary transition-colors duration-300" href="#">コンセプト</a>
+<a class="font-headline-sm text-headline-sm text-on-surface hover:text-secondary transition-colors duration-300" href="#">アクセス</a>
+<a class="font-headline-sm text-headline-sm text-on-surface hover:text-secondary transition-colors duration-300" href="#">お知らせ</a>
+</div>
+<button class="bg-primary-container text-on-primary px-lg py-sm rounded-md font-label-lg hover:opacity-90 transition-all active:scale-95">
+                予約する
+            </button>
+</div>
+</nav>
+<!-- Main Visual -->
+<section class="relative h-[85vh] w-full overflow-hidden transition-all duration-1000 opacity-100 translate-y-0">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] scale-110 hover:scale-100" style="background-image: url('https://lh3.googleusercontent.com/aida/ADBb0ugMplLKsdk0NA1t3w-uNnTCQjTFOCPx0HHNSlolsaHoWQWq_MiwEpBDeNWweDsjPTtUhfKVuJl8d-pFiX954X3Mi8GGU2tMp0O_MTx_2LDLcFXl3I97HpqhpKqsk_G0CCKipyLoUOTLQEY6SZbArRIgBR7NJlxxERE1vtRpC2HRxmDWsVLIziFMCJ7H6sPBa6yjq6DEuBbdB6-bhb0u_QDDqMovMqGQh9b0aJC_UMN-u9x3j2DmOdeKi-E');">
+<div class="absolute inset-0 bg-black/20"></div>
+</div>
+<div class="relative h-full flex items-center justify-end px-margin-mobile md:px-margin-desktop max-w-screen-xl mx-auto">
+<div class="writing-vertical flex flex-col items-center">
+<h1 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl !font-light text-white hero-text-shadow leading-relaxed tracking-[0.3em]">
+                    古民家で過ごす、<br/>ゆっくりとした時間。
+                </h1>
+</div>
+</div>
+<div class="absolute bottom-base left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-white text-headline-lg">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- Concept Area -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop text-[#3d2b1f] transition-all duration-1000 opacity-100 translate-y-0" style="background-color: #f4f3f1; background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='tsuchikabe'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='0.3'/%3E%3CfeFuncG type='linear' slope='0.3'/%3E%3CfeFuncB type='linear' slope='0.3'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23tsuchikabe)' opacity='0.08'/%3E%3C/svg%3E&quot;);">
+<div class="max-w-4xl mx-auto text-center space-y-lg">
+<span class="font-label-lg text-[#3d2b1f] opacity-70 tracking-widest block">CONCEPT</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-[#3d2b1f]">日常を忘れ、心ほどけるひとときを</h2>
+<div class="space-y-md">
+<p class="font-body-lg text-body-lg text-[#3d2b1f]/90 leading-loose">
+                    築八十年の古民家を改装した「夢前茶屋」では、<br class="hidden md:block"/>
+                    時を刻む柱の傷や、畳の香り、窓から差し込む柔らかな光が皆様をお迎えします。
+                </p>
+<p class="font-body-lg text-body-lg text-[#3d2b1f]/90 leading-loose">
+                    厳選した豆を丁寧にハンドドリップした珈琲と、<br class="hidden md:block"/>
+                    どこか懐かしい味わいの自家製プリン。<br class="hidden md:block"/>
+                    せわしない毎日から少しだけ離れて、自分を整える時間をお過ごしください。
+                </p>
+</div>
+<div class="flex justify-center pt-md">
+<span class="w-12 h-px bg-outline/30"></span>
+<span class="mx-md text-[#3d2b1f] opacity-30">✦</span>
+<span class="w-12 h-px bg-outline/30"></span>
+</div>
+</div>
+</section>
+<!-- Pickup Menu (Asymmetric Layout) -->
+<section class="py-xl overflow-hidden transition-all duration-1000 opacity-100 translate-y-0">
+<div class="max-w-screen-xl mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-xl items-center">
+<!-- Image Side -->
+<div class="md:col-span-7 relative group">
+<div class="absolute -inset-4 border border-outline/10 rounded-xl translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
+<div class="relative overflow-hidden rounded-xl shadow-lg aspect-[4/3]">
+<img alt="看板メニュー" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A professional food photograph featuring a classic Japanese custard pudding with a rich caramel top and a cup of aromatic hand-dripped coffee. The scene is set on a dark, rustic wooden table within an old Japanese house, lit by soft light coming through shoji screens. The composition is artistic and minimalist, evoking a sense of calm and nostalgia in a modern-retro style." src="https://lh3.googleusercontent.com/aida/ADBb0ugMplLKsdk0NA1t3w-uNnTCQjTFOCPx0HHNSlolsaHoWQWq_MiwEpBDeNWweDsjPTtUhfKVuJl8d-pFiX954X3Mi8GGU2tMp0O_MTx_2LDLcFXl3I97HpqhpKqsk_G0CCKipyLoUOTLQEY6SZbArRIgBR7NJlxxERE1vtRpC2HRxmDWsVLIziFMCJ7H6sPBa6yjq6DEuBbdB6-bhb0u_QDDqMovMqGQh9b0aJC_UMN-u9x3j2DmOdeKi-E"/>
+</div>
+</div>
+<!-- Text Side -->
+<div class="md:col-span-5 space-y-md">
+<span class="font-label-lg text-secondary tracking-widest">SIGNATURE</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">
+                        自家製カスタードプリンと<br/>
+                        深煎り珈琲
+                    </h2>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                        卵のコクを活かした固めのプリンに、ほろ苦いカラメルをたっぷり。香ばしく深みのある珈琲との相性は、至福のひとときを約束します。
+                    </p>
+<div class="pt-base">
+<a class="inline-flex items-center gap-base font-label-lg text-primary border-b border-primary pb-base hover:text-secondary hover:border-secondary transition-all group" href="#">
+                            おしながきを見る
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- News (Bento-ish List) -->
+<section class="py-xl bg-surface-container-highest/30 transition-all duration-1000 opacity-100 translate-y-0">
+<div class="max-w-screen-xl mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-end mb-lg"><div><span class="font-label-lg text-secondary tracking-widest">NEWS</span><h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">お知らせ</h2></div></div>
+
+<!-- 最新のお知らせ3件 -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- News Item 1 -->
+<a class="bg-surface-container-low p-lg rounded-xl border border-outline/5 hover:border-outline/20 transition-all duration-300 group" href="#">
+<div class="text-on-surface-variant font-label-sm mb-base">2024.11.15</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-md group-hover:text-secondary transition-colors">冬の限定メニュー「和栗のパフェ」が登場しました</h3>
+<p class="font-body-sm text-on-surface-variant">旬の和栗を贅沢に使用した、期間限定のパフェ。ほうじ茶とのセットがおすすめです。</p>
+</a>
+<!-- News Item 2 -->
+<a class="bg-surface-container-low p-lg rounded-xl border border-outline/5 hover:border-outline/20 transition-all duration-300 group" href="#">
+<div class="text-on-surface-variant font-label-sm mb-base">2024.11.01</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-md group-hover:text-secondary transition-colors">年末年始の営業について</h3>
+<p class="font-body-sm text-on-surface-variant">年内は12月29日まで、年始は1月4日より通常営業いたします。ご予約はお早めに。</p>
+</a>
+<!-- News Item 3 -->
+<a class="bg-surface-container-low p-lg rounded-xl border border-outline/5 hover:border-outline/20 transition-all duration-300 group" href="#">
+<div class="text-on-surface-variant font-label-sm mb-base">2024.10.20</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-md group-hover:text-secondary transition-colors">写真展示イベント「古民家の記憶」開催のお知らせ</h3>
+<p class="font-body-sm text-on-surface-variant">店内ギャラリースペースにて、地元の写真家による作品展を開催いたします。</p>
+</a>
+</div>
+
+<!-- 隠しコンテナ（過去のお知らせ） -->
+<div id="past-news-container" class="grid grid-cols-1 md:grid-cols-3 gap-md mt-md overflow-hidden transition-all duration-500 max-h-0 opacity-0">
+<!-- News Item 4 -->
+<a class="bg-surface-container-low p-lg rounded-xl border border-outline/5 hover:border-outline/20 transition-all duration-300 group" href="#">
+<div class="text-on-surface-variant font-label-sm mb-base">2024.09.25</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-md group-hover:text-secondary transition-colors">営業時間変更のお知らせ（10月より）</h3>
+<p class="font-body-sm text-on-surface-variant">日暮れが早くなる秋季・冬季に合わせて、10月1日より営業時間を一部変更させていただきます。</p>
+</a>
+<!-- News Item 5 -->
+<a class="bg-surface-container-low p-lg rounded-xl border border-outline/5 hover:border-outline/20 transition-all duration-300 group" href="#">
+<div class="text-on-surface-variant font-label-sm mb-base">2024.09.10</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-md group-hover:text-secondary transition-colors">秋季限定メニュー「安納芋のプリン」が加わりました</h3>
+<p class="font-body-sm text-on-surface-variant">じっくりと焼き上げた安納芋の甘みを活かした、濃厚で滑らかなプリンです。</p>
+</a>
+<!-- News Item 6 -->
+<a class="bg-surface-container-low p-lg rounded-xl border border-outline/5 hover:border-outline/20 transition-all duration-300 group" href="#">
+<div class="text-on-surface-variant font-label-sm mb-base">2024.08.05</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-md group-hover:text-secondary transition-colors">夏休み親子和菓子作り体験のお知らせ</h3>
+<p class="font-body-sm text-on-surface-variant">職人が教える、手作りの和菓子体験。夏の思い出にいかがでしょうか。</p>
+</a>
+</div>
+
+<div class="flex justify-center mt-lg">
+<button id="toggle-news-btn" class="inline-flex items-center gap-xs font-headline-sm text-primary hover:text-secondary transition-colors group">
+<span class="font-['Noto_Serif_JP']" id="toggle-news-text">過去のお知らせを見る</span>
+<span class="material-symbols-outlined transition-transform duration-300 group-hover:translate-y-1" id="toggle-news-icon">expand_more</span>
+</button>
+</div>
+
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-dim pt-xl pb-lg border-t border-outline/10">
+<div class="max-w-screen-xl mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-xl mb-xl">
+<!-- Brand Info -->
+<div class="space-y-md">
+<div class="flex items-center gap-sm">
+<img alt="夢前茶屋" class="h-10 w-10 object-contain grayscale opacity-80" src="https://lh3.googleusercontent.com/aida/ADBb0ugMYXht7_ivmKbBk-hoq4BIMcjzgYk90qFuSGTdNJqETM-bLCFSpnnaLG62Pv3W-jkNJVcCRl1-2sppjMh4S0PbV8i15t6Xvk4KM_wK-XASUU3UwbclX3NTTwzODsAa8jBiq1k4NhHKcYdvyqJVEwvXIy9Uee0lCLCf1WGdHm8O6cqVVmesiZGz9YT19hBD5gzy7Sc4Yi9NGnn3aujUt1hswn7BWslmi2GpU3kw2ppIbV0ODvlWS1QRelw"/>
+<span class="font-headline-sm text-headline-sm text-primary">夢前茶屋</span>
+</div>
+<p class="font-body-sm text-on-surface-variant">
+                        〒000-0000<br/>
+                        兵庫県某市夢前町 123-45<br/>
+                        TEL: 00-0000-0000
+                    </p>
+</div>
+<!-- Business Hours -->
+<div class="space-y-md">
+<h4 class="font-label-lg text-primary border-b border-outline/20 pb-xs">OPENING HOURS</h4>
+<div class="font-body-sm text-on-surface-variant space-y-xs">
+<div class="flex justify-between"><span class="">火 — 金</span><span class="">11:00 - 18:00</span></div>
+<div class="flex justify-between"><span class="">土 — 日</span><span class="">10:00 - 19:00</span></div>
+<div class="flex justify-between font-bold text-secondary"><span class="">定休日</span><span class="">月曜日・第3火曜日</span></div>
+</div>
+</div>
+<!-- Footer Links -->
+<div class="space-y-md">
+<h4 class="font-label-lg text-primary border-b border-outline/20 pb-xs">LINKS</h4>
+<ul class="font-body-sm text-on-surface-variant space-y-xs">
+<li class=""><a class="hover:text-secondary transition-colors" href="#">プライバシーポリシー</a></li>
+<li class=""><a class="hover:text-secondary transition-colors" href="#">特定商取引法に基づく表記</a></li>
+<li class=""><a class="hover:text-secondary transition-colors" href="#">採用情報</a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col items-center gap-md border-t border-outline/5 pt-lg">
+<div class="flex gap-lg">
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">
+<span class="sr-only">Instagram</span>
+<svg class="h-6 w-6 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">
+<span class="sr-only">Facebook</span>
+<svg class="h-6 w-6 fill-current" viewbox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path></svg>
+</a>
+</div>
+<p class="font-body-sm text-on-surface-variant">© 2024 夢前茶屋 Yumesaki Chaya. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Atmospheric Scroll Reveal Effect
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+
+        // Sticky Nav Shadow
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        // Toggle Past News
+        const toggleNewsBtn = document.getElementById('toggle-news-btn');
+        const pastNewsContainer = document.getElementById('past-news-container');
+        const toggleNewsText = document.getElementById('toggle-news-text');
+        const toggleNewsIcon = document.getElementById('toggle-news-icon');
+
+        let isNewsExpanded = false;
+
+        if (toggleNewsBtn && pastNewsContainer) {
+            toggleNewsBtn.addEventListener('click', () => {
+                isNewsExpanded = !isNewsExpanded;
+                if (isNewsExpanded) {
+                    // 開く
+                    pastNewsContainer.style.maxHeight = pastNewsContainer.scrollHeight + "px";
+                    pastNewsContainer.style.opacity = "1";
+                    toggleNewsText.textContent = "閉じる";
+                    toggleNewsIcon.textContent = "expand_less";
+                    toggleNewsIcon.classList.remove('group-hover:translate-y-1');
+                    toggleNewsIcon.classList.add('group-hover:-translate-y-1');
+                } else {
+                    // 閉じる
+                    pastNewsContainer.style.maxHeight = "0px";
+                    pastNewsContainer.style.opacity = "0";
+                    toggleNewsText.textContent = "過去のお知らせを見る";
+                    toggleNewsIcon.textContent = "expand_more";
+                    toggleNewsIcon.classList.remove('group-hover:-translate-y-1');
+                    toggleNewsIcon.classList.add('group-hover:translate-y-1');
+                }
+            });
+        }
+    </script>
+</body></html>

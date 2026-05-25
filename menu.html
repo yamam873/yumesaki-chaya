@@ -1,0 +1,424 @@
+<!DOCTYPE html><html class="light" lang="ja" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>おしながき | 夢前茶屋 - 古民家で過ごす、ゆっくりとした時間</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "surface": "#faf9f6",
+              "surface-dim": "#dbdad7",
+              "surface-bright": "#faf9f6",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f4f3f1",
+              "surface-container": "#efeeeb",
+              "surface-container-high": "#e9e8e5",
+              "surface-container-highest": "#e3e2e0",
+              "on-surface": "#3d2b1f",
+              "on-surface-variant": "#504535",
+              "inverse-surface": "#2f312f",
+              "inverse-on-surface": "#f2f1ee",
+              "outline": "#827563",
+              "outline-variant": "#d4c4af",
+              "surface-tint": "#7d5700",
+              "primary": "#7d5700",
+              "on-primary": "#ffffff",
+              "primary-container": "#c68e17",
+              "on-primary-container": "#422c00",
+              "inverse-primary": "#fabc46",
+              "secondary": "#006e0c",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#8ff780",
+              "on-secondary-container": "#00730d",
+              "tertiary": "#705a4c",
+              "on-tertiary": "#ffffff",
+              "tertiary-container": "#ad9383",
+              "on-tertiary-container": "#3f2c20",
+              "error": "#ba1a1a",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-error-container": "#93000a",
+              "primary-fixed": "#ffdeab",
+              "primary-fixed-dim": "#fabc46",
+              "on-primary-fixed": "#271900",
+              "on-primary-fixed-variant": "#5f4100",
+              "secondary-fixed": "#92fa83",
+              "secondary-fixed-dim": "#77dd6a",
+              "on-secondary-fixed": "#002201",
+              "on-secondary-fixed-variant": "#005307",
+              "tertiary-fixed": "#fbddca",
+              "tertiary-fixed-dim": "#dec1af",
+              "on-tertiary-fixed": "#28180d",
+              "on-tertiary-fixed-variant": "#574335",
+              "background": "#faf9f6",
+              "on-background": "#3d2b1f",
+              "surface-variant": "#e3e2e0"
+            },
+            "borderRadius": {
+                    "sm": "0.25rem",
+                    "DEFAULT": "0.5rem",
+                    "md": "0.5rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "base": "8px",
+                    "md": "24px",
+                    "margin-desktop": "64px",
+                    "sm": "12px",
+                    "xl": "80px",
+                    "lg": "48px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Noto Serif JP", "serif"],
+                    "headline-lg": ["Noto Serif JP", "serif"],
+                    "headline-xl": ["Noto Serif JP", "serif"],
+                    "headline-sm": ["Noto Serif JP", "serif"],
+                    "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+                    "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+                    "headline-lg-mobile": ["Noto Serif JP", "serif"],
+                    "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+                    "headline-xl-mobile": ["Noto Serif JP", "serif"],
+                    "label-lg": ["Plus Jakarta Sans", "sans-serif"],
+                    "body-md": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-xl": ["40px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.8", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["30px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.7", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .japanese-letter-spacing {
+            letter-spacing: 0.15em;
+        }
+        .writing-vertical {
+            writing-mode: vertical-rl;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation Bar -->
+<header class="w-full sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-outline/10">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base max-w-screen-xl mx-auto">
+<div class="flex items-center gap-sm">
+<img alt="夢前茶屋" class="h-10 w-10 object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ugMYXht7_ivmKbBk-hoq4BIMcjzgYk90qFuSGTdNJqETM-bLCFSpnnaLG62Pv3W-jkNJVcCRl1-2sppjMh4S0PbV8i15t6Xvk4KM_wK-XASUU3UwbclX3NTTwzODsAa8jBiq1k4NhHKcYdvyqJVEwvXIy9Uee0lCLCf1WGdHm8O6cqVVmesiZGz9YT19hBD5gzy7Sc4Yi9NGnn3aujUt1hswn7BWslmi2GpU3kw2ppIbV0ODvlWS1QRelw"/>
+<span class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary tracking-widest">夢前茶屋</span>
+</div>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300 font-headline-sm" href="#">ホーム</a>
+<a class="text-secondary border-b-2 border-secondary pb-1 font-headline-sm transition-colors duration-300" href="#">おしながき</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300 font-headline-sm" href="#">コンセプト</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300 font-headline-sm" href="#">アクセス</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-300 font-headline-sm" href="#">お知らせ</a>
+</nav>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-md font-label-lg hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-95 shadow-sm">予約する</button>
+</div>
+</header>
+<main class="w-full">
+<!-- Split Screen Layout -->
+<div class="flex flex-col lg:flex-row min-h-screen">
+<!-- Fixed Image Side (Left) -->
+<div class="w-full lg:w-1/2 lg:fixed lg:h-[calc(100vh-80px)] top-[80px] left-0 hidden lg:block overflow-hidden bg-surface-container-highest">
+<!-- Image Container -->
+<div class="relative w-full h-full">
+<img alt="Featured Item" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out opacity-100" id="featured-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMqGQcWEwxdg2TF3VgY9JOgqPnk4NdCmFoVU31FmzClV_w04tQJOpzddvAE_Y8t-cl11wZMmcZ18srMX0pNpVIbBab0KvpW3S-_9WhuuqA7wuKFHorJwKwkAPQa6pEqfAmRP0_et9WX9TvRnIwIj3UWKK39mnBFPTWT9YUPkWCoTEb4lZsrdT0Asc9TGzE4RbM8sxibU01piXGZE-ysCqDQAOtJDX9yUIJmmXFTRz2whGpwh_nVUVBRNCl0HkSyx9gACt0FutqdwY" style="opacity: 1;">
+<div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+</div>
+</div>
+<!-- Scrolling Content Side (Right) -->
+<div class="w-full lg:w-1/2 lg:ml-auto px-margin-mobile md:px-xl py-xl pb-[20vh]">
+<!-- Hero Section / Title -->
+<div class="flex flex-col mb-xl">
+<div class="w-16 h-px bg-secondary mb-md"></div>
+<h1 class="font-headline-xl md:text-headline-xl text-headline-xl-mobile text-primary japanese-letter-spacing mb-base">
+                            おしながき
+                        </h1>
+<p class="font-body-lg text-on-surface-variant max-w-lg">
+                            厳選された素材と、手間ひまかけた職人の技。<br>
+                            四季折々の移ろいを感じる、至福の甘味をご用意いたしました。
+                        </p>
+</div>
+<div class="flex flex-col gap-[15vh]">
+<!-- Item 1: Special Retro Pudding -->
+<div class="menu-item scroll-mt-32" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAgVAvyJQv5QWwgitX0VC2fsw1JM3xe-TVys-ekRUoY6uNmofJfsKwN-0okwDaAXoJ4gPEgtSPL2CTH2gfro14hbHZdrTgMUSIjOrrVT74ObPetb7g7iGIBoVFALvkXZGHX0-psNTg3XeuPW_ixOwpnbpa4r6SgHbiaQOMBs8r_p90FruiqJI1u1OWVxxoJL1H4qPaZaMclKj3RJhEyMKpOv3hGUnwbfpryoWpbXZf6zHKD74z_Hovx1aqbVlKdR3rTDQXRGJqoKAc">
+<div class="block lg:hidden w-full h-64 mb-md rounded-md overflow-hidden relative">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgVAvyJQv5QWwgitX0VC2fsw1JM3xe-TVys-ekRUoY6uNmofJfsKwN-0okwDaAXoJ4gPEgtSPL2CTH2gfro14hbHZdrTgMUSIjOrrVT74ObPetb7g7iGIBoVFALvkXZGHX0-psNTg3XeuPW_ixOwpnbpa4r6SgHbiaQOMBs8r_p90FruiqJI1u1OWVxxoJL1H4qPaZaMclKj3RJhEyMKpOv3hGUnwbfpryoWpbXZf6zHKD74z_Hovx1aqbVlKdR3rTDQXRGJqoKAc">
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-sm py-xs rounded-full flex items-center gap-xs shadow-md">
+<span class="material-symbols-outlined text-[16px]">takeout_dining</span>
+<span class="text-label-sm">テイクアウトOK</span>
+</div>
+</div>
+<div class="flex justify-between items-baseline mb-sm">
+<h2 class="font-headline-lg md:text-headline-lg text-headline-lg-mobile text-primary">特製レトロプリン</h2>
+<span class="font-headline-sm text-secondary">¥650</span>
+</div>
+<div class="hidden lg:flex mb-md">
+<div class="bg-primary/10 text-primary px-sm py-xs rounded-full flex items-center gap-xs border border-primary/20">
+<span class="material-symbols-outlined text-[16px]">takeout_dining</span>
+<span class="text-label-sm font-semibold">テイクアウトOK</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant mb-lg leading-relaxed text-lg">
+                    自家製カラメルと濃厚な卵の味わい。少し固めに仕上げた、懐かしさを感じる王道のプリンです。
+                </p>
+<button class="flex items-center gap-base text-primary font-label-lg group/btn hover:text-primary-container transition-colors" id="pudding-detail-btn" onclick="document.getElementById('pudding-modal').classList.remove('hidden')">
+                    詳細を見る
+                    <span class="material-symbols-outlined transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</button>
+<div class="w-full h-px bg-outline/20 mt-xl"></div>
+</div>
+<!-- Item 2: Coffee -->
+<div class="menu-item scroll-mt-32" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDiu2yJywVJjyMdzosUhcNS49Yt-nymUtnIfqJ_kQWilRZKV5icf1YDw__PJLcvnmFrjkHW1_tNMY3PLqS7qWjsBvrbrgG_z3WdWCOtO5UszNaSOL2GMeKXLlm9adh9vk8_BeFM-Gpf4INtIxRKdcNLxNAK4fePvq0lQ4FJbiu8GUBsGfC9inFnSgNO-KTizEDgCD-aoPY5DW7uvx9F7tHPE6aQ5L6WuGAPsqTTX8GCN4S1P2weDLL417jFx38Jtmv_A1STj3HMFNA">
+<div class="block lg:hidden w-full h-64 mb-md rounded-md overflow-hidden relative">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiu2yJywVJjyMdzosUhcNS49Yt-nymUtnIfqJ_kQWilRZKV5icf1YDw__PJLcvnmFrjkHW1_tNMY3PLqS7qWjsBvrbrgG_z3WdWCOtO5UszNaSOL2GMeKXLlm9adh9vk8_BeFM-Gpf4INtIxRKdcNLxNAK4fePvq0lQ4FJbiu8GUBsGfC9inFnSgNO-KTizEDgCD-aoPY5DW7uvx9F7tHPE6aQ5L6WuGAPsqTTX8GCN4S1P2weDLL417jFx38Jtmv_A1STj3HMFNA">
+</div>
+<div class="flex justify-between items-baseline mb-sm">
+<h2 class="font-headline-lg md:text-headline-lg text-headline-lg-mobile text-primary">自家焙煎コーヒー</h2>
+<span class="font-headline-sm text-secondary">¥550</span>
+</div>
+<p class="font-body-md text-on-surface-variant leading-relaxed text-lg">
+                    深煎りでコクのある一杯。店内で毎日丁寧に焙煎した、豆本来の香りをお楽しみいただけます。
+                </p>
+<div class="w-full h-px bg-outline/20 mt-xl"></div>
+</div>
+<!-- Item 3: Strawberry Pudding A La Mode -->
+<div class="menu-item scroll-mt-32" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCdRX31u0ad70MeJJhXPCl87qkEKoxV0C9C-GGgEvrXQLMEaHaoqinCD_d_DPQn2myTgyvl24U4MxSEFXLjeedhNd8GJVz8rMZiDRugseM5nZzkBEheLCOO4A4ZMN42zAq5nnHMUwG23sGUAO3DbxN6qdYHYwTkwV8oTVsIPmRk0_H4cvAt9E7C6_xo43B0Mc-MNpbsyDLDEnMNMZimRQ77gQwIOMBdeA4AvfIttnf66bxIUD3jKR8RzTA0ZkG_Cn2saKsJ42Fw-18">
+<div class="block lg:hidden w-full h-64 mb-md rounded-md overflow-hidden relative">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdRX31u0ad70MeJJhXPCl87qkEKoxV0C9C-GGgEvrXQLMEaHaoqinCD_d_DPQn2myTgyvl24U4MxSEFXLjeedhNd8GJVz8rMZiDRugseM5nZzkBEheLCOO4A4ZMN42zAq5nnHMUwG23sGUAO3DbxN6qdYHYwTkwV8oTVsIPmRk0_H4cvAt9E7C6_xo43B0Mc-MNpbsyDLDEnMNMZimRQ77gQwIOMBdeA4AvfIttnf66bxIUD3jKR8RzTA0ZkG_Cn2saKsJ42Fw-18">
+</div>
+<div class="flex justify-between items-baseline mb-sm">
+<h2 class="font-headline-lg md:text-headline-lg text-headline-lg-mobile text-primary">いちごのプリンアラモード</h2>
+<span class="font-headline-sm text-secondary">¥1,200</span>
+</div>
+<p class="font-body-md text-on-surface-variant leading-relaxed text-lg">
+                    旬のいちごとフルーツを贅沢に添えて。目でも楽しめる、華やかな季節限定の逸品です。
+                </p>
+<div class="w-full h-px bg-outline/20 mt-xl"></div>
+</div>
+<!-- Item 4: Wagashi Set -->
+<div class="menu-item scroll-mt-32" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCxySdne-GXStCj_2Y6xrxTsqGO1g0AOS9L7lI_AVDf51adh9yDxNDzPSBrWrDcro5WK6ZdzPtPLGEE0GnOlNud4EEOcvYckS9I_D2U061BXqFNCRdPcks2MTxMde0aImTAxzH4sBreDhAgLtWwduQT-qANBO8VeqSEYlLrREBfImdBjhtkkjjPkY6aMiWO2-EgAHz5rdqW5bPwuXfsFkipJO5RqZI-jX1VolQ38NXTJ1PT3yE0fuguDN7NB3CUb8Jv-1wbasZbc9g">
+<div class="block lg:hidden w-full h-64 mb-md rounded-md overflow-hidden relative">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxySdne-GXStCj_2Y6xrxTsqGO1g0AOS9L7lI_AVDf51adh9yDxNDzPSBrWrDcro5WK6ZdzPtPLGEE0GnOlNud4EEOcvYckS9I_D2U061BXqFNCRdPcks2MTxMde0aImTAxzH4sBreDhAgLtWwduQT-qANBO8VeqSEYlLrREBfImdBjhtkkjjPkY6aMiWO2-EgAHz5rdqW5bPwuXfsFkipJO5RqZI-jX1VolQ38NXTJ1PT3yE0fuguDN7NB3CUb8Jv-1wbasZbc9g">
+</div>
+<div class="flex justify-between items-baseline mb-sm">
+<h2 class="font-headline-lg md:text-headline-lg text-headline-lg-mobile text-primary">季節の和菓子セット</h2>
+<span class="font-headline-sm text-secondary">¥980</span>
+</div>
+<p class="font-body-md text-on-surface-variant leading-relaxed text-lg">
+                    お抹茶と日替わりの生菓子。京都から取り寄せた上質な抹茶と、職人が作る繊細な和菓子をお届けします。
+                </p>
+<div class="w-full h-px bg-outline/20 mt-xl"></div>
+</div>
+<!-- Item 5: Matcha -->
+<div class="menu-item scroll-mt-32" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDvEmUMX_fyRZu0tH-V24y1QSqOOvze-lN6Fj0UHjYLpeE5wX3YI5rMQeMYHah9-NBCY91AdV3LOFJAktoZH0LilrEafcEbHpHOo3Q36TwXYlwXnXp3-FepzaB4JwlGAE6DDWprsATMBgU6FiV9tjeU2OHTpNgOi2PPkh-mt-Li2BwRN7L5CIkaT6f5Vt7zoM5Uq96_0xT95kjMAm7KaWtpAtgX8F8Xmb8Rfi4C2bALzJpWrp54SQ7Klpwc5pPf9oRKurxBFcL2gZE">
+<div class="block lg:hidden w-full h-64 mb-md rounded-md overflow-hidden relative">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvEmUMX_fyRZu0tH-V24y1QSqOOvze-lN6Fj0UHjYLpeE5wX3YI5rMQeMYHah9-NBCY91AdV3LOFJAktoZH0LilrEafcEbHpHOo3Q36TwXYlwXnXp3-FepzaB4JwlGAE6DDWprsATMBgU6FiV9tjeU2OHTpNgOi2PPkh-mt-Li2BwRN7L5CIkaT6f5Vt7zoM5Uq96_0xT95kjMAm7KaWtpAtgX8F8Xmb8Rfi4C2bALzJpWrp54SQ7Klpwc5pPf9oRKurxBFcL2gZE">
+</div>
+<div class="flex justify-between items-baseline mb-sm">
+<h2 class="font-headline-lg md:text-headline-lg text-headline-lg-mobile text-primary">お抹茶</h2>
+<span class="font-headline-sm text-secondary">¥600</span>
+</div>
+<p class="font-body-md text-on-surface-variant leading-relaxed text-lg">
+                    丁寧に点てた、香り高くクリーミーな泡立ちの本格抹茶です。
+                </p>
+<div class="w-full h-px bg-outline/20 mt-xl"></div>
+</div>
+<!-- Item 6: Wasanbon -->
+<div class="menu-item scroll-mt-32" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuA8_i8e9sxbMLqrx-tKqLRAzKlHdHQEdWuPUE2l6oazuQu-gNs0s7LfuYnY0qeRjeACIAl7XMB5RU8fcwyahaZ6oPff9IqprbMcEsyAfe5IXUJ05-JY3lL9FLXcONamGAJ9rrHeHN31ORH7LxpRam_c-sLXPb181F3RJVO9V7e6WP629cZGySEnYkAkfPMayG2inaRtVAtu2MB866ap49R0mZjPjJGh3wfUfobWVlxQbaTDfldFwcBAIvBM4mAM1s0ROqGLBfqouNs">
+<div class="block lg:hidden w-full h-64 mb-md rounded-md overflow-hidden relative">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8_i8e9sxbMLqrx-tKqLRAzKlHdHQEdWuPUE2l6oazuQu-gNs0s7LfuYnY0qeRjeACIAl7XMB5RU8fcwyahaZ6oPff9IqprbMcEsyAfe5IXUJ05-JY3lL9FLXcONamGAJ9rrHeHN31ORH7LxpRam_c-sLXPb181F3RJVO9V7e6WP629cZGySEnYkAkfPMayG2inaRtVAtu2MB866ap49R0mZjPjJGh3wfUfobWVlxQbaTDfldFwcBAIvBM4mAM1s0ROqGLBfqouNs">
+</div>
+<div class="flex justify-between items-baseline mb-sm">
+<h2 class="font-headline-lg md:text-headline-lg text-headline-lg-mobile text-primary">和三盆の干菓子</h2>
+<span class="font-headline-sm text-secondary">¥450</span>
+</div>
+<p class="font-body-md text-on-surface-variant leading-relaxed text-lg">
+                    口の中でスッと溶ける、上品な甘さの伝統的なお干菓子です。
+                </p>
+<div class="w-full h-px bg-outline/20 mt-xl"></div>
+</div>
+<!-- Item 7: Fruit Parfait -->
+<div class="menu-item scroll-mt-32" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDhOm42AN8aXHMQcFqryOoewtO6eMTfm8oIYG3dJWv5sDLX77GJF00-KeEjbDgZlGCrSF1mjyghf7q523sQKD9XbcjzdmtYyYDYQefkO2v1uhcMIiNflZVk-yMovNixGsAGVleRzw_2q4_gAHVtMATwSbzcaHEkPvLH0vHOYZ51bCKwuLJSmshj6D8AJOQ90jSXRA6HGwTdka-pXrAGFdAu5_PcEINbgeff_xki9Pm-MuqacWZ5rnEqqfVv_fWddP9nmWNIMjVJ1QU">
+<div class="block lg:hidden w-full h-64 mb-md rounded-md overflow-hidden relative">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhOm42AN8aXHMQcFqryOoewtO6eMTfm8oIYG3dJWv5sDLX77GJF00-KeEjbDgZlGCrSF1mjyghf7q523sQKD9XbcjzdmtYyYDYQefkO2v1uhcMIiNflZVk-yMovNixGsAGVleRzw_2q4_gAHVtMATwSbzcaHEkPvLH0vHOYZ51bCKwuLJSmshj6D8AJOQ90jSXRA6HGwTdka-pXrAGFdAu5_PcEINbgeff_xki9Pm-MuqacWZ5rnEqqfVv_fWddP9nmWNIMjVJ1QU">
+</div>
+<div class="flex justify-between items-baseline mb-sm">
+<h2 class="font-headline-lg md:text-headline-lg text-headline-lg-mobile text-primary">季節のフルーツパフェ</h2>
+<span class="font-headline-sm text-secondary">¥1,400</span>
+</div>
+<p class="font-body-md text-on-surface-variant leading-relaxed text-lg">
+                    旬の果実を贅沢に使用した、彩り豊かなパフェです。
+                </p>
+<div class="w-full h-px bg-outline/20 mt-xl"></div>
+</div>
+<!-- Item 8: Hojicha Latte -->
+<div class="menu-item scroll-mt-32" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBMqGQcWEwxdg2TF3VgY9JOgqPnk4NdCmFoVU31FmzClV_w04tQJOpzddvAE_Y8t-cl11wZMmcZ18srMX0pNpVIbBab0KvpW3S-_9WhuuqA7wuKFHorJwKwkAPQa6pEqfAmRP0_et9WX9TvRnIwIj3UWKK39mnBFPTWT9YUPkWCoTEb4lZsrdT0Asc9TGzE4RbM8sxibU01piXGZE-ysCqDQAOtJDX9yUIJmmXFTRz2whGpwh_nVUVBRNCl0HkSyx9gACt0FutqdwY">
+<div class="block lg:hidden w-full h-64 mb-md rounded-md overflow-hidden relative">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMqGQcWEwxdg2TF3VgY9JOgqPnk4NdCmFoVU31FmzClV_w04tQJOpzddvAE_Y8t-cl11wZMmcZ18srMX0pNpVIbBab0KvpW3S-_9WhuuqA7wuKFHorJwKwkAPQa6pEqfAmRP0_et9WX9TvRnIwIj3UWKK39mnBFPTWT9YUPkWCoTEb4lZsrdT0Asc9TGzE4RbM8sxibU01piXGZE-ysCqDQAOtJDX9yUIJmmXFTRz2whGpwh_nVUVBRNCl0HkSyx9gACt0FutqdwY">
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-sm py-xs rounded-full flex items-center gap-xs shadow-md">
+<span class="material-symbols-outlined text-[16px]">takeout_dining</span>
+<span class="text-label-sm">テイクアウトOK</span>
+</div>
+</div>
+<div class="flex justify-between items-baseline mb-sm">
+<h2 class="font-headline-lg md:text-headline-lg text-headline-lg-mobile text-primary">ほうじ茶ラテ</h2>
+<span class="font-headline-sm text-secondary">¥650</span>
+</div>
+<div class="hidden lg:flex mb-md">
+<div class="bg-primary/10 text-primary px-sm py-xs rounded-full flex items-center gap-xs border border-primary/20">
+<span class="material-symbols-outlined text-[16px]">takeout_dining</span>
+<span class="text-label-sm font-semibold">テイクアウトOK</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant leading-relaxed text-lg">
+                    香ばしいほうじ茶とミルクが溶け合う、心安らぐ一杯です。
+                </p>
+<div class="w-full h-px bg-outline/20 mt-xl"></div>
+</div>
+</div>
+<!-- Section Decoration / Message -->
+<div class="mt-24 pt-xl text-center">
+<span class="material-symbols-outlined text-secondary text-4xl mb-md">local_cafe</span>
+<p class="font-headline-sm text-primary italic mb-base">「日々の喧騒を忘れ、一杯の茶に心を寄せる。」</p>
+<p class="font-body-sm text-on-surface-variant">※表示価格はすべて税込です。</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim pt-xl pb-lg border-t border-outline/10 relative z-10">
+<div class="max-w-screen-xl mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-xl mb-xl">
+<!-- Brand Info -->
+<div class="space-y-md">
+<div class="flex items-center gap-sm">
+<img alt="夢前茶屋" class="h-10 w-10 object-contain grayscale opacity-80" src="https://lh3.googleusercontent.com/aida/ADBb0ugMYXht7_ivmKbBk-hoq4BIMcjzgYk90qFuSGTdNJqETM-bLCFSpnnaLG62Pv3W-jkNJVcCRl1-2sppjMh4S0PbV8i15t6Xvk4KM_wK-XASUU3UwbclX3NTTwzODsAa8jBiq1k4NhHKcYdvyqJVEwvXIy9Uee0lCLCf1WGdHm8O6cqVVmesiZGz9YT19hBD5gzy7Sc4Yi9NGnn3aujUt1hswn7BWslmi2GpU3kw2ppIbV0ODvlWS1QRelw"/>
+<span class="font-headline-sm text-headline-sm text-primary">夢前茶屋</span>
+</div>
+<p class="font-body-sm text-on-surface-variant">
+                        〒671-0000<br/>
+                        兵庫県姫路市夢前町○○ 123-4<br/>
+                        TEL: 079-000-0000
+                    </p>
+</div>
+<!-- Business Hours -->
+<div class="space-y-md">
+<h4 class="font-label-lg text-primary border-b border-outline/20 pb-xs">OPENING HOURS</h4>
+<div class="font-body-sm text-on-surface-variant space-y-xs">
+<div class="flex justify-between"><span class="">平日</span><span class="">11:00 - 17:00</span></div>
+<div class="flex justify-between font-bold"><span class="">土日祝</span><span class="">10:00 - 18:00</span></div>
+<div class="flex justify-between font-bold text-error"><span class="">定休日</span><span class="">火曜日</span></div>
+</div>
+</div>
+<!-- Footer Links -->
+<div class="space-y-md">
+<h4 class="font-label-lg text-primary border-b border-outline/20 pb-xs">LINKS</h4>
+<ul class="font-body-sm text-on-surface-variant space-y-xs">
+<li class=""><a class="hover:text-secondary transition-colors" href="#">プライバシーポリシー</a></li>
+<li class=""><a class="hover:text-secondary transition-colors" href="#">特定商取引法に基づく表記</a></li>
+<li class=""><a class="hover:text-secondary transition-colors" href="#">採用情報</a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col items-center gap-md border-t border-outline/5 pt-lg">
+<div class="flex gap-lg">
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">
+<span class="sr-only">Instagram</span>
+<svg class="h-6 w-6 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">
+<span class="sr-only">Facebook</span>
+<svg class="h-6 w-6 fill-current" viewbox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path></svg>
+</a>
+</div>
+<p class="font-body-sm text-on-surface-variant">© 2024 夢前茶屋 Yumesaki Chaya. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const featuredImage = document.getElementById('featured-image');
+        const menuItems = document.querySelectorAll('.menu-item');
+        
+        // Use Intersection Observer to detect which item is mostly in view
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -40% 0px',
+            threshold: 0.5
+        };
+
+        let currentImageSrc = featuredImage.src;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const newImageSrc = entry.target.getAttribute('data-image');
+                    if (newImageSrc && newImageSrc !== currentImageSrc) {
+                        // Fade effect
+                        featuredImage.style.opacity = 0;
+                        setTimeout(() => {
+                            featuredImage.src = newImageSrc;
+                            featuredImage.style.opacity = 1;
+                            currentImageSrc = newImageSrc;
+                        }, 250); // half of transition time
+                    }
+                }
+            });
+        }, observerOptions);
+
+        menuItems.forEach(item => {
+            observer.observe(item);
+        });
+    });
+</script>
+<div class="fixed inset-0 z-[60] hidden flex items-center justify-center p-4" id="pudding-modal">
+<div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="document.getElementById('pudding-modal').classList.add('hidden')"></div>
+<div class="relative bg-surface rounded-xl shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden z-10 flex flex-col md:flex-row">
+<button class="absolute top-4 right-4 text-on-surface hover:text-primary transition-colors z-20 bg-surface/50 md:bg-transparent rounded-full p-1" onclick="document.getElementById('pudding-modal').classList.add('hidden')">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<div class="w-full md:w-5/12 h-64 md:h-auto shrink-0">
+<img alt="特製レトロプリン" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgVAvyJQv5QWwgitX0VC2fsw1JM3xe-TVys-ekRUoY6uNmofJfsKwN-0okwDaAXoJ4gPEgtSPL2CTH2gfro14hbHZdrTgMUSIjOrrVT74ObPetb7g7iGIBoVFALvkXZGHX0-psNTg3XeuPW_ixOwpnbpa4r6SgHbiaQOMBs8r_p90FruiqJI1u1OWVxxoJL1H4qPaZaMclKj3RJhEyMKpOv3hGUnwbfpryoWpbXZf6zHKD74z_Hovx1aqbVlKdR3rTDQXRGJqoKAc">
+</div>
+<div class="w-full md:w-7/12 p-md md:px-lg md:py-xl flex flex-col justify-center overflow-y-auto">
+<h2 class="font-headline-lg text-primary mb-2">特製レトロプリン</h2>
+<p class="font-headline-sm text-secondary mb-6">¥650 <span class="text-label-sm">(税込)</span></p>
+<p class="font-body-md text-on-surface mb-8 leading-relaxed">
+          八ヶ岳の新鮮な卵と、濃厚なジャージー牛乳を贅沢に使用。少し固めに仕上げた、昔懐かしい喫茶店のプリンです。自家製のほろ苦いカラメルソースが、卵のコクを最大限に引き立てます。
+        </p>
+<div class="bg-surface-container-low p-sm md:p-md rounded-md border border-outline/10">
+<h3 class="font-headline-sm text-on-surface mb-3 text-base">【素材へのこだわり】</h3>
+<p class="font-body-sm text-on-surface-variant leading-relaxed">
+            厳選した地元農家から届く産みたての卵を使用。職人が毎日手作りする無添加のカラメルと、アクセントのバニラビーンズを合わせ、低温でじっくりと丁寧に焼き上げました。なめらかながらもしっかりとした食べ応えで、至福の食感を実現しています。
+          </p>
+</div>
+</div>
+</div>
+</div></body></html>
