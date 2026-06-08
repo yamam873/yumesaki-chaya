@@ -7,29 +7,29 @@
           <img src="<?php echo get_template_directory_uri(); ?>/logo.png" alt="<?php bloginfo('name'); ?>" class="c-footer__logo">
           <span class="c-footer__title"><?php bloginfo('name'); ?></span>
         </div>
-        <div class="c-footer__text">
+        <address class="c-footer__text">
           <?php echo nl2br( esc_html( get_theme_mod( 'yumesaki_address', '〒671-0000 兵庫県姫路市夢前町○○ 123-4' ) ) ); ?><br>
           TEL: <?php echo esc_html( get_theme_mod( 'yumesaki_phone', '079-000-0000' ) ); ?>
-        </div>
+        </address>
       </div>
       
       <!-- Business Hours -->
       <div class="c-footer__section">
         <h4 class="c-footer__heading">OPENING HOURS</h4>
-        <div class="c-footer__hours">
+        <dl class="c-footer__hours">
           <div class="c-footer__hour-row">
-            <span>平日</span>
-            <span><?php echo esc_html( get_theme_mod( 'yumesaki_hours_weekday', '11:00 - 17:00' ) ); ?></span>
+            <dt>平日</dt>
+            <dd><?php echo esc_html( get_theme_mod( 'yumesaki_hours_weekday', '11:00 - 17:00' ) ); ?></dd>
           </div>
           <div class="c-footer__hour-row c-footer__hour-row--weekend">
-            <span>土日祝</span>
-            <span><?php echo esc_html( get_theme_mod( 'yumesaki_hours_weekend', '10:00 - 18:00' ) ); ?></span>
+            <dt>土日祝</dt>
+            <dd><?php echo esc_html( get_theme_mod( 'yumesaki_hours_weekend', '10:00 - 18:00' ) ); ?></dd>
           </div>
           <div class="c-footer__hour-row c-footer__hour-row--holiday">
-            <span style="color: var(--color-error); font-weight: 700;">定休日</span>
-            <span style="color: var(--color-error); font-weight: 700;"><?php echo esc_html( get_theme_mod( 'yumesaki_holidays', '火曜日' ) ); ?></span>
+            <dt>定休日</dt>
+            <dd><?php echo esc_html( get_theme_mod( 'yumesaki_holidays', '火曜日' ) ); ?></dd>
           </div>
-        </div>
+        </dl>
       </div>
       
       <!-- Footer Links -->

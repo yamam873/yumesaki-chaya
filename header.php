@@ -19,7 +19,7 @@
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="c-header__nav-link <?php if(is_front_page()) echo 'is-active'; ?>">ホーム</a>
       <a href="<?php echo esc_url( get_post_type_archive_link( 'menu_item' ) ); ?>" class="c-header__nav-link <?php if(is_post_type_archive('menu_item')) echo 'is-active'; ?>">おしながき</a>
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>#concept" class="c-header__nav-link">コンセプト</a>
-      <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="c-header__nav-link <?php if(is_page('contact')) echo 'is-active'; ?>">アクセス</a>
+      <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="c-header__nav-link <?php if(is_page('contact')) echo 'is-active'; ?>">お問い合わせ・アクセス</a>
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>#news" class="c-header__nav-link">お知らせ</a>
     </nav>
     

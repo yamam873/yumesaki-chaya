@@ -4,16 +4,21 @@
   <!-- Hero Section -->
   <section class="p-hero js-reveal">
     <div class="p-hero__bg-slider">
-      <div class="p-hero__bg-slide p-hero__bg-slide--1" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/hero1.avif');"></div>
-      <div class="p-hero__bg-slide p-hero__bg-slide--2" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/hero2.avif');"></div>
-      <div class="p-hero__bg-slide p-hero__bg-slide--3" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/hero3.avif');"></div>
+      <?php for ( $i = 1; $i <= 4; $i++ ) : ?>
+        <?php 
+          $hero_img = get_theme_mod( "yumesaki_hero_image_{$i}", get_template_directory_uri() . "/img/hero{$i}.avif" );
+          if ( $hero_img ) :
+        ?>
+          <div class="p-hero__bg-slide p-hero__bg-slide--<?php echo $i; ?>" style="background-image: url('<?php echo esc_url( $hero_img ); ?>');"></div>
+        <?php endif; ?>
+      <?php endfor; ?>
     </div>
     <div class="p-hero__overlay"></div>
     <div class="p-hero__content l-container">
       <h1 class="p-hero__title">古民家で過ごす、<br>ゆっくりとした時間。</h1>
     </div>
     <div class="p-hero__scroll-icon">
-      <span class="material-symbols-outlined" style="font-size: 32px;">keyboard_double_arrow_down</span>
+      <span class="material-symbols-outlined p-hero__scroll-icon-svg" aria-hidden="true">keyboard_double_arrow_down</span>
     </div>
   </section>
 
@@ -35,9 +40,9 @@
         </p>
         
         <div class="p-concept__divider">
-          <span style="width: 48px; height: 1px; background-color: var(--color-outline); margin: 0 16px;"></span>
-          <span>✦</span>
-          <span style="width: 48px; height: 1px; background-color: var(--color-outline); margin: 0 16px;"></span>
+          <span class="p-concept__divider-line"></span>
+          <span aria-hidden="true">✦</span>
+          <span class="p-concept__divider-line"></span>
         </div>
       </div>
     </div>

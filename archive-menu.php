@@ -4,7 +4,7 @@
     
     <!-- Left: Fixed Image (Desktop only) -->
     <div class="p-menu__visual">
-      <div class="p-menu__visual-img-container" style="position:relative; width:100%; height:100%;">
+      <div class="p-menu__visual-img-container">
         <img src="<?php echo get_template_directory_uri(); ?>/img/menu1.avif" alt="おしながき" class="p-menu__visual-img js-menu-featured-img">
         <div class="p-menu__visual-overlay"></div>
       </div>
@@ -84,9 +84,9 @@
       </div>
       
       <div class="p-menu__footer-msg">
-        <span class="material-symbols-outlined u-text-secondary" style="font-size: 32px; margin-bottom: 24px;">local_cafe</span>
-        <p class="u-font-headline u-text-primary" style="font-style: italic; margin-bottom: 8px;">「日々の喧騒を忘れ、一杯の茶に心を寄せる。」</p>
-        <p style="font-size: 14px; color: var(--color-on-surface-variant);">※表示価格はすべて税込です。</p>
+        <span class="material-symbols-outlined u-text-secondary p-menu__footer-icon" aria-hidden="true">local_cafe</span>
+        <p class="u-font-headline u-text-primary p-menu__footer-catchphrase">「日々の喧騒を忘れ、一杯の茶に心を寄せる。」</p>
+        <p class="p-menu__footer-note">※表示価格はすべて税込です。</p>
       </div>
       
     </div>

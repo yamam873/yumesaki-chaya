@@ -159,6 +159,25 @@ function yumesaki_customize_register( $wp_customize ) {
 		'section' => 'yumesaki_shop_info',
 		'type'    => 'text',
 	) );
+
+	// Section: Hero Images
+	$wp_customize->add_section( 'yumesaki_hero_images', array(
+		'title'       => __( 'ヒーロー画像設定', 'yumesaki' ),
+		'description' => __( 'トップページのヒーローエリアに表示する画像を設定します。', 'yumesaki' ),
+		'priority'    => 120,
+	) );
+
+	for ( $i = 1; $i <= 4; $i++ ) {
+		$wp_customize->add_setting( "yumesaki_hero_image_{$i}", array(
+			'default'           => get_template_directory_uri() . "/img/hero{$i}.avif",
+			'sanitize_callback' => 'esc_url_raw',
+		) );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, "yumesaki_hero_image_{$i}", array(
+			'label'    => sprintf( __( 'ヒーロー画像 %d', 'yumesaki' ), $i ),
+			'section'  => 'yumesaki_hero_images',
+			'settings' => "yumesaki_hero_image_{$i}",
+		) ) );
+	}
 }
 add_action( 'customize_register', 'yumesaki_customize_register' );
 
