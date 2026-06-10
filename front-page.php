@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main class="l-main">
-  <!-- Hero Section -->
+  <!-- ヒーローエリア -->
   <section class="p-hero js-reveal">
     <div class="p-hero__bg-slider">
       <?php for ( $i = 1; $i <= 4; $i++ ) : ?>
@@ -22,7 +22,7 @@
     </div>
   </section>
 
-  <!-- Concept Section -->
+  <!-- コンセプトエリア -->
   <section class="p-concept js-reveal" id="concept">
     <div class="l-container">
       <div class="p-concept__inner">
@@ -48,7 +48,7 @@
     </div>
   </section>
 
-  <!-- Signature Section -->
+  <!-- 看板メニューエリア -->
   <section class="p-signature js-reveal">
     <div class="l-container">
       <div class="p-signature__grid">
@@ -70,7 +70,7 @@
     </div>
   </section>
 
-  <!-- News Section -->
+  <!-- お知らせエリア -->
   <section class="p-news js-reveal" id="news">
     <div class="l-container">
       <div class="p-news__header">
@@ -82,11 +82,17 @@
         <?php
         $news_query = new WP_Query( array(
             'post_type'      => 'post',
-            'posts_per_page' => 3,
+            'posts_per_page' => 6,
         ) );
         
+        $post_count = 0;
         if ( $news_query->have_posts() ) :
             while ( $news_query->have_posts() ) : $news_query->the_post();
+                $post_count++;
+                if ( $post_count == 4 ) {
+                    echo '</div>';
+                    echo '<div id="past-news-container" class="p-news__grid p-news__past-container">';
+                }
         ?>
         <!-- お知らせアイテム（リンクなし） -->
         <div class="p-news__item">
@@ -104,6 +110,15 @@
         <p>現在お知らせはありません。</p>
         <?php endif; ?>
       </div>
+      
+      <?php if ( $post_count > 3 ) : ?>
+      <div class="p-news__toggle-wrapper">
+        <button type="button" id="toggle-news-btn" class="p-news__toggle-btn">
+          <span id="toggle-news-text">過去のお知らせを見る</span>
+          <span class="material-symbols-outlined p-news__toggle-icon" id="toggle-news-icon">expand_more</span>
+        </button>
+      </div>
+      <?php endif; ?>
     </div>
   </section>
 

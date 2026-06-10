@@ -11,7 +11,7 @@ Version: 1.0.0
    1. CSS変数
    ========================================================= */
 :root {
-  /* Colors */
+  /* カラー（色） */
   --color-surface: #faf9f6;
   --color-surface-dim: #dbdad7;
   --color-surface-container-lowest: #ffffff;
@@ -38,11 +38,11 @@ Version: 1.0.0
   --color-background: #faf9f6;
   --color-on-background: #3d2b1f;
 
-  /* Typography */
+  /* タイポグラフィ（フォント） */
   --font-headline: 'Noto Serif JP', serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
 
-  /* Font Sizes */
+  /* フォントサイズ */
   --text-xs: 12px;
   --text-sm: 14px;
   --text-base: 16px;
@@ -51,7 +51,7 @@ Version: 1.0.0
   --text-2xl: 24px;
   --text-3xl: 30px;
 
-  /* Spacing */
+  /* スペーシング（余白） */
   --spacing-xs: 4px;
   --spacing-base: 8px;
   --spacing-sm: 16px;
@@ -62,23 +62,24 @@ Version: 1.0.0
   --margin-mobile: 16px;
   --margin-desktop: 64px;
 
-  /* Border Radius */
+  /* 角丸 */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
   --radius-full: 9999px;
 }
-
+/*
 @media (min-width: 768px) {
   :root {
     --text-2xl: 32px;
     --text-3xl: 40px;
   }
 }
+*/
 
 /* =========================================================
-   2. Reset & Base
+   2. リセット & ベーススタイル
    ========================================================= */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -122,7 +123,7 @@ button {
 }
 
 /* =========================================================
-   3. Utility Classes
+   3. ユーティリティクラス
    ========================================================= */
 .u-text-primary { color: var(--color-primary); }
 .u-text-secondary { color: var(--color-secondary); }
@@ -135,7 +136,7 @@ button {
 .u-writing-vertical { writing-mode: vertical-rl; }
 .u-text-shadow { text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); }
 
-/* Layout Containers */
+/* レイアウトコンテナ */
 .l-container {
   max-width: 1280px;
   margin: 0 auto;
@@ -150,9 +151,9 @@ button {
 }
 
 /* =========================================================
-   4. Components
+   4. コンポーネント
    ========================================================= */
-/* Header */
+/* ヘッダー */
 .c-header {
   width: 100%;
   position: sticky;
@@ -187,7 +188,7 @@ button {
   font-family: var(--font-headline);
   font-size: var(--text-2xl);
   color: var(--color-primary);
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0.1em;
 }
 .c-header__nav {
@@ -215,7 +216,7 @@ button {
   padding-bottom: 4px;
 }
 
-/* Button */
+/* ボタン */
 .c-button {
   display: inline-flex;
   align-items: center;
@@ -239,7 +240,7 @@ button {
   transform: scale(0.95);
 }
 
-/* Footer */
+/* フッター */
 .c-footer {
   background-color: var(--color-surface-dim);
   padding-top: var(--spacing-xl);
@@ -307,12 +308,12 @@ button {
   font-size: var(--text-sm);
   color: var(--color-on-surface-variant);
 }
-.c-footer__hour-row.is-holiday {
-  color: var(--color-error);
+.c-footer__hour-row--weekend {
   font-weight: 400;
 }
-.c-footer__hour-row.is-weekend {
-  font-weight: 400;
+.c-footer__hour-row--holiday {
+  color: var(--color-secondary);
+  font-weight: 600;
 }
 .c-footer__links {
   display: flex;
@@ -363,7 +364,7 @@ button {
 }
 
 /* =========================================================
-   5. Pages: Top Page
+   5. ページ: トップページ
    ========================================================= */
 .p-hero {
   position: relative;
@@ -626,8 +627,63 @@ button {
   color: var(--color-on-surface-variant);
 }
 
+/* お知らせ折りたたみ機能 */
+.p-news__past-container {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  margin-top: 0;
+}
+.p-news__past-container.is-open {
+  margin-top: var(--spacing-md);
+}
+
+.p-news__toggle-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: var(--spacing-lg);
+}
+
+.p-news__toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  font-family: var(--font-headline);
+  font-size: var(--text-base);
+  color: var(--color-primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-md);
+}
+
+.p-news__toggle-btn * {
+  pointer-events: none;
+}
+
+.p-news__toggle-btn:hover {
+  color: var(--color-secondary);
+}
+
+.p-news__toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.p-news__toggle-btn:hover .p-news__toggle-icon {
+  transform: translateY(4px);
+}
+
+.p-news__toggle-btn.is-open:hover .p-news__toggle-icon {
+  transform: translateY(-4px);
+}
+
 /* =========================================================
-   6. Pages: Menu Archive
+   6. ページ: おしながき一覧（アーカイブ）
    ========================================================= */
 .p-menu {
   display: flex;
@@ -638,7 +694,7 @@ button {
   .p-menu { flex-direction: row; }
 }
 
-/* Left: Fixed Image */
+/* 左側: 固定画像 */
 .p-menu__visual {
   display: none;
 }
@@ -672,7 +728,7 @@ button {
   background: linear-gradient(to right, rgba(0,0,0,0.2), transparent);
 }
 
-/* Right: Scrolling Content */
+/* 右側: スクロールするコンテンツ */
 .p-menu__content {
   width: 100%;
   padding: var(--spacing-xl) var(--margin-mobile);

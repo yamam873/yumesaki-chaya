@@ -1,7 +1,7 @@
 <footer class="c-footer">
   <div class="l-container">
     <div class="c-footer__grid">
-      <!-- Brand Info -->
+      <!-- ブランド情報 -->
       <div class="c-footer__section">
         <div class="c-footer__brand">
           <img src="<?php echo get_template_directory_uri(); ?>/logo.png" alt="<?php bloginfo('name'); ?>" class="c-footer__logo">
@@ -13,7 +13,7 @@
         </address>
       </div>
       
-      <!-- Business Hours -->
+      <!-- 営業時間 -->
       <div class="c-footer__section">
         <h4 class="c-footer__heading">OPENING HOURS</h4>
         <dl class="c-footer__hours">
@@ -32,7 +32,7 @@
         </dl>
       </div>
       
-      <!-- Footer Links -->
+      <!-- フッターリンク -->
       <div class="c-footer__section">
         <h4 class="c-footer__heading">LINKS</h4>
         <ul class="c-footer__links">
@@ -73,6 +73,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     document.querySelectorAll('.js-reveal').forEach(el => observer.observe(el));
+
+    // お知らせ折りたたみ切り替え
+    const toggleNewsBtn = document.getElementById('toggle-news-btn');
+    const pastNewsContainer = document.getElementById('past-news-container');
+    const toggleNewsText = document.getElementById('toggle-news-text');
+    const toggleNewsIcon = document.getElementById('toggle-news-icon');
+
+    if (toggleNewsBtn && pastNewsContainer) {
+        toggleNewsBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isOpen = pastNewsContainer.classList.contains('is-open');
+            if (isOpen) {
+                // 閉じる
+                pastNewsContainer.style.maxHeight = pastNewsContainer.scrollHeight + 'px';
+                pastNewsContainer.offsetHeight; // reflowを強制して即座に適用させる
+                pastNewsContainer.style.maxHeight = '0px';
+                pastNewsContainer.style.opacity = '0';
+                pastNewsContainer.classList.remove('is-open');
+                
+                toggleNewsBtn.classList.remove('is-open');
+                toggleNewsText.textContent = '過去のお知らせを見る';
+                toggleNewsIcon.textContent = 'expand_more';
+            } else {
+                // 開く
+                pastNewsContainer.classList.add('is-open');
+                pastNewsContainer.style.maxHeight = pastNewsContainer.scrollHeight + 'px';
+                pastNewsContainer.style.opacity = '1';
+                
+                toggleNewsBtn.classList.add('is-open');
+                toggleNewsText.textContent = '閉じる';
+                toggleNewsIcon.textContent = 'expand_less';
+                
+                // トランジション終了時に none にしてリサイズ対応
+                const transitionHandler = () => {
+                    if (pastNewsContainer.classList.contains('is-open')) {
+                        pastNewsContainer.style.maxHeight = 'none';
+                    }
+                    pastNewsContainer.removeEventListener('transitionend', transitionHandler);
+                };
+                pastNewsContainer.addEventListener('transitionend', transitionHandler);
+            }
+        });
+    }
 });
 </script>
 <?php wp_footer(); ?>

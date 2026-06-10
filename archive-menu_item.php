@@ -33,11 +33,16 @@
             while ( $menu_query->have_posts() ) : $menu_query->the_post();
                 
                 // Get ACF fields
-                $price = get_field('menu_price');
-                $is_takeout = get_field('menu_is_takeout');
+                $price = get_field('menu_price', get_the_ID());
+                $is_takeout = get_field('menu_is_takeout', get_the_ID());
                 
-                // Use sequentially numbered AVIF images
-                $thumbnail_url = get_template_directory_uri() . '/img/menu' . $menu_count . '.avif';
+                // Use post thumbnail if available, otherwise fallback to sequentially numbered AVIF images
+                $thumbnail_url = get_the_post_thumbnail_url( get_the_ID(), 'large' );
+                if ( ! $thumbnail_url ) {
+                    // Assuming there are 8 menu images (menu1.avif to menu8.avif)
+                    $fallback_num = ( ( $menu_count - 1 ) % 8 ) + 1;
+                    $thumbnail_url = get_template_directory_uri() . '/img/menu' . $fallback_num . '.avif';
+                }
         ?>
         <div class="p-menu-item js-menu-item" data-image="<?php echo esc_url($thumbnail_url); ?>">
           
