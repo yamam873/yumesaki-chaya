@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>おしながき - 夢前茶屋</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --color-background: #faf9f6;
+            --color-on-background: #1a1c1a;
+            --color-primary: #5f4100;
+            --color-on-surface-variant: #4f4537;
+            --color-surface-container: #efeeeb;
+            --color-sumi-ink: #1a1c1a;
+            --color-washi-ivory: #faf9f6;
+            --color-outline-variant: #d3c4b2;
+            --color-outline: #817565;
+            
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --font-heading: 'Noto Serif JP', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-background);
+            color: var(--color-on-background);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography */
+        h1, h2, .brand-text {
+            font-family: var(--font-heading);
+            color: var(--color-primary);
+        }
+
+        .hero-title {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 44px;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: var(--color-on-surface-variant);
+        }
+
+        .menu-title {
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            font-family: var(--font-heading);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--color-sumi-ink);
+            letter-spacing: 0.1em;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .menu-desc {
+            font-size: 16px;
+            color: var(--color-on-surface-variant);
+            margin-bottom: 1rem;
+        }
+
+        .menu-price {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--color-primary);
+            text-align: right;
+        }
+
+        /* Layout */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(250, 249, 246, 0.9);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(129, 117, 101, 0.1);
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-text {
+            font-size: 24px;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+
+        .menu-icon {
+            color: var(--color-primary);
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .hero-section {
+            height: 353px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        /* Cinematic Scroll Sections */
+        .cinematic-section {
+            position: relative;
+            min-height: 707px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-attachment: scroll; /* iOS smooth scrolling preference */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 32px;
+        }
+
+        .cinematic-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(250, 249, 246, 0.4);
+            z-index: 1;
+        }
+
+        .cinematic-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .menu-card {
+            background-color: rgba(250, 249, 246, 0.8);
+            backdrop-filter: blur(4px);
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--color-outline-variant);
+            box-shadow: 0 4px 24px rgba(26, 28, 26, 0.05);
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-surface-container);
+            padding: 80px 20px;
+            border-top: 1px solid rgba(129, 117, 101, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            margin-top: 64px;
+        }
+
+        .footer-brand {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .footer-links a {
+            color: var(--color-on-surface-variant);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-copy {
+            font-size: 14px;
+            color: var(--color-primary);
+            margin-top: 16px;
+        }
+
+        /* Media Queries for Desktop layout adjustments if needed, though primarily mobile focused as requested */
+        @media (min-width: 768px) {
+            .cinematic-section {
+                background-attachment: fixed;
+            }
+            .cinematic-content {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .cinematic-content.reverse {
+                flex-direction: row-reverse;
+            }
+            .footer-links {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+<a class="brand-text" href="#">夢前茶屋</a>
+<button class="menu-icon">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main>
+<section class="hero-section">
+<h1 class="hero-title">おしながき</h1>
+<p class="hero-subtitle">静寂とともに味わう、夢前の恵み</p>
+</section>
+<!-- Section 1: Matcha -->
+<section class="cinematic-section" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHhb6NHWMlcEvh3e1Zu1qjwSfwavrDX2bxCCrGHA_rDB4pymxAteYssBa1939K4RwBMs8cOIVtLW8CslED4VRhvTdUWN6aF9N0ZwiG6iX4r5wujJ0T92bEpzqMJzjioPMPaZeZ_dJ3QqVD585GRV0NgBHJo-acCLOo8JKciwwJyarFx7FMX8eRa7_vuSF34tRTlvZ_DGG-Iw5Y4OP6tokEqtcpJQPzgdTUG0P7ecC-7ladvTHJ0uBUG2KHDZ6k49NcA7Xp6nrcJv8');">
+<div class="cinematic-overlay"></div>
+<div class="cinematic-content">
+<h2 class="menu-title">特製 宇治抹茶</h2>
+<div class="menu-card">
+<p class="menu-desc">厳選された京都宇治の最高級茶葉を使用。ご注文をいただいてから、一つ一つ丁寧に点ててお出しします。深い香りと、まろやかな旨味をご堪能ください。</p>
+<div class="menu-price">¥1,200</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Wagashi -->
+<section class="cinematic-section" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBLCdHL7EfRTwOtdIWzUoXLDYgX-oxUqLjMyAHttlI3DefQ6qPLtT_QFz8nwRywztTT3v5WzRAJjfrC-cT37viXaVEq0DfO0rRjjG9DJVFybg1H-bbxaYGJ1NTEzuVynHjeiGn_NuA6HRaSy3usHmwHDy8Dl9jqVJVYJmIGyeYm8g_VMKl8pWtQSAvm_r_4UmqAPSIrL1JKD0nEgHLqrusLiPStvUqGPeaYRgXO2DmNq15UoncAHCDjZBFErIYUV9FFzj2mxVtgSBo');">
+<div class="cinematic-overlay" style="background-color: rgba(250, 249, 246, 0.5);"></div>
+<div class="cinematic-content reverse">
+<h2 class="menu-title">季節の和菓子</h2>
+<div class="menu-card">
+<p class="menu-desc">四季折々の情景を表現した、目にも美しい生菓子。地元・夢前の素材を活かし、熟練の職人が毎日手作りしています。お抹茶との相性は格別です。</p>
+<div class="menu-price">¥800</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Anmitsu -->
+<section class="cinematic-section" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAv0JwzOfyyD2y4t5tLYkWWWAzXw5Wz267puw4Hke6cj-NSIQr-fyUi3yLUBcmHgz7B2nwkAvm3gqMByIUFO2uYLxTO6x0yYNtCHLuMRG5K5zpTDrzu5yEgGOnBew9C8Qf4hBjbTLtA7g-VnPvO8hIe1-Zm4NXYBvxwLw33GCOFldkYdXNDJhhVtPU3hOhElvD_u9bW3MyF6uMChCdvin10KSPtrmFDc9uI0nESRQ2C5tHPiCskfSf3nGRIbA7vkJouhNUxpbXCebE');">
+<div class="cinematic-overlay"></div>
+<div class="cinematic-content">
+<h2 class="menu-title">夢前 白玉あんみつ</h2>
+<div class="menu-card">
+<p class="menu-desc">自家製の寒天と、もちもちの白玉、そして丁寧に炊き上げた北海道産小豆。特製の濃厚な黒蜜をたっぷりとかけてお召し上がりください。</p>
+<div class="menu-price">¥950</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="footer-brand">夢前茶屋</div>
+<div class="footer-links">
+<a href="#">プライバシーポリシー</a>
+<a href="#">特定商取引法に基づく表記</a>
+<a href="#">採用情報</a>
+</div>
+<div class="footer-copy">© 2024 夢前茶屋 Yumesaki Chaya. All Rights Reserved.</div>
+</footer>
+</body></html>

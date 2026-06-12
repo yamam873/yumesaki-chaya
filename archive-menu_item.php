@@ -1,5 +1,81 @@
 <?php get_header(); ?>
 <main class="l-main">
+
+<?php if ( wp_is_mobile() ) : ?>
+
+  <!-- ===== MOBILE VERSION (Cinematic Design) ===== -->
+  <div class="p-menu">
+    <div class="p-menu__content p-menu__content--mobile-header">
+      <div class="p-menu__header">
+        <div class="p-menu__divider"></div>
+        <h1 class="p-menu__title">おしながき</h1>
+        <p class="p-menu__desc">
+          厳選された素材と、手間ひまかけた職人の技。<br>
+          四季折々の移ろいを感じる、至福の甘味をご用意いたしました。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-menu-mobile">
+    <?php
+    $menu_query = new WP_Query( array(
+        'post_type'      => 'menu_item',
+        'posts_per_page' => -1,
+    ) );
+    
+    if ( $menu_query->have_posts() ) :
+        $menu_count = 1;
+        while ( $menu_query->have_posts() ) : $menu_query->the_post();
+            
+            // Get ACF fields
+            $price = get_field('menu_price', get_the_ID());
+            
+            // Use post thumbnail if available, otherwise fallback
+            $thumbnail_url = get_the_post_thumbnail_url( get_the_ID(), 'large' );
+            if ( ! $thumbnail_url ) {
+                $fallback_num = ( ( $menu_count - 1 ) % 8 ) + 1;
+                $thumbnail_url = get_template_directory_uri() . '/img/menu' . $fallback_num . '.avif';
+            }
+            
+            // Reverse layout for even items
+            $reverse_class = ( $menu_count % 2 === 0 ) ? 'reverse' : '';
+    ?>
+    <section class="cinematic-section" style="background-image: url('<?php echo esc_url($thumbnail_url); ?>');">
+      <div class="cinematic-overlay <?php if($reverse_class) echo 'is-reverse'; ?>"></div>
+      <div class="cinematic-content <?php echo $reverse_class; ?>">
+        <h2 class="menu-title-mobile"><?php the_title(); ?></h2>
+        <div class="menu-card-mobile">
+          <p class="menu-desc-mobile"><?php echo wp_kses_post( wp_strip_all_tags( get_the_content() ) ); ?></p>
+          <?php if ( $price ) : ?>
+          <div class="menu-price-mobile">¥<?php echo esc_html( number_format( (float) $price ) ); ?></div>
+          <?php endif; ?>
+        </div>
+      </div>
+    </section>
+    <?php
+            $menu_count++;
+        endwhile;
+        wp_reset_postdata();
+    else :
+    ?>
+    <p class="p-menu__empty-msg">現在おしながきは準備中です。</p>
+    <?php endif; ?>
+  </div>
+
+  <div class="p-menu">
+    <div class="p-menu__content p-menu__content--mobile-footer">
+      <div class="p-menu__footer-msg">
+        <span class="material-symbols-outlined u-text-secondary p-menu__footer-icon" aria-hidden="true">local_cafe</span>
+        <p class="u-font-headline u-text-primary p-menu__footer-catchphrase">「日々の喧騒を忘れ、一杯の茶に心を寄せる。」</p>
+        <p class="p-menu__footer-note">※表示価格はすべて税込です。</p>
+      </div>
+    </div>
+  </div>
+
+<?php else : ?>
+
+  <!-- ===== DESKTOP VERSION (Original Design) ===== -->
   <div class="p-menu">
     
     <!-- Left: Fixed Image (Desktop only) -->
@@ -96,8 +172,11 @@
       
     </div>
   </div>
+
+<?php endif; ?>
 </main>
 
+<?php if ( ! wp_is_mobile() ) : ?>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const featuredImage = document.querySelector('.js-menu-featured-img');
@@ -134,5 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
+<?php endif; ?>
 
 <?php get_footer(); ?>

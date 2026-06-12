@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おしながき - 夢前茶屋 (Mobile)</title>
+    <style>
+        /* Base Reset & Variables */
+        :root {
+            --color-surface: #faf9f6;
+            --color-surface-container: #efeeeb;
+            --color-primary: #7d5700;
+            --color-primary-fixed: #ffdeab;
+            --color-secondary: #006e0c;
+            --color-on-surface: #1a1c1a;
+            --color-on-surface-variant: #504535;
+            --color-outline-variant: #d4c4af;
+            --font-serif: "Noto Serif JP", serif;
+            --font-sans: "Plus Jakarta Sans", "Noto Sans JP", sans-serif;
+            --spacing-margin: 24px;
+            --rounded-md: 0.75rem;
+            --shadow-soft: 0 10px 30px -10px rgba(61, 43, 31, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--color-surface);
+            color: var(--color-on-surface);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography Customization (Simulating Noto Serif) */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap');
+
+        /* Layout Structure */
+        .mobile-container {
+            max-width: 480px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem var(--spacing-margin);
+            background-color: rgba(250, 249, 246, 0.95);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand-logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+
+        .btn-reserve {
+            background-color: #4a3411; /* Custom primary-container style from system */
+            color: #ffffff;
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        /* Navigation Links (Mobile Style) */
+        .nav-links {
+            display: flex;
+            justify-content: space-around;
+            padding: 0.75rem var(--spacing-margin);
+            background-color: var(--color-surface);
+            border-bottom: 1px solid rgba(130, 117, 99, 0.1);
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--color-on-surface-variant);
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .nav-link.active {
+            color: var(--color-secondary);
+            background-color: rgba(143, 247, 128, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+        }
+
+        /* Hero / Title Section */
+        .page-title-section {
+            text-align: center;
+            padding: 3rem var(--spacing-margin);
+            background-color: #f4f3f1;
+        }
+
+        .decorative-icon {
+            color: var(--color-primary);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .page-title {
+            font-family: var(--font-serif);
+            font-size: 2.25rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.1em;
+        }
+
+        .page-subtitle {
+            font-size: 1rem;
+            color: var(--color-on-surface-variant);
+        }
+
+        /* Stacking Menu Section */
+        .menu-list {
+            padding: 2rem var(--spacing-margin) 5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Stack Card Interaction */
+        .menu-card-wrapper {
+            position: sticky;
+            top: 100px; /* Offset for header + small gap */
+            padding-bottom: 1rem;
+        }
+
+        .menu-card {
+            background-color: #ffffff;
+            border-radius: var(--rounded-md);
+            border: 1px solid var(--color-outline-variant);
+            overflow: hidden;
+            display: flex;
+            padding: 1.25rem;
+            gap: 1.25rem;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 0.5rem;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .menu-content {
+            flex-grow: 1;
+        }
+
+        .menu-name {
+            font-family: var(--font-serif);
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .menu-desc {
+            font-size: 0.8125rem;
+            color: var(--color-on-surface-variant);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .menu-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-price {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .btn-add {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--color-surface-container);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--color-on-surface-variant);
+        }
+
+        .badge-seasonal {
+            display: inline-block;
+            font-size: 0.625rem;
+            font-weight: 700;
+            color: var(--color-secondary);
+            border: 1px solid var(--color-secondary);
+            padding: 1px 6px;
+            border-radius: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #efeeeb;
+            padding: 3rem var(--spacing-margin);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-serif);
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-link {
+            text-decoration: none;
+            color: var(--color-on-surface-variant);
+            font-size: 0.875rem;
+        }
+
+        .copyright {
+            font-size: 0.75rem;
+            color: #827563;
+        }
+
+        /* Animation Keyframes (Conceptual for JS/Scroll support) */
+        @media (prefers-reduced-motion: no-preference) {
+            /* Cards below current card scale down slightly when overlapped */
+            .menu-card-wrapper {
+                transform-origin: top center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="mobile-container">
+    <header>
+        <a href="#" class="brand-logo">夢前茶屋</a>
+        <a href="#" class="btn-reserve">予約する</a>
+    </header>
+
+    <nav class="nav-links">
+        <a href="#" class="nav-link">ホーム</a>
+        <a href="#" class="nav-link active">おしながき</a>
+        <a href="#" class="nav-link">コンセプト</a>
+        <a href="#" class="nav-link">アクセス</a>
+    </nav>
+
+    <section class="page-title-section">
+        <span class="decorative-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 3L4 9v12h16V9l-8-6z" />
+                <path d="M12 3v18M4 9h16" />
+            </svg>
+        </span>
+        <h1 class="page-title">おしながき</h1>
+        <p class="page-subtitle">こころを潤す、ひとときを</p>
+    </section>
+
+    <main class="menu-list">
+        <!-- Item 1 -->
+        <div class="menu-card-wrapper">
+            <div class="menu-card">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB6yE-H0DVcluQ6cRIFJrcNgcNUC4ZFVpx6ppcRyGcWR7XtI9mz-im9Q3foonIYw0UZYaSKuO1mUfK-pSkPB8wwXi2Gvi4tLpLSYWkoUwHhWCuv0KOP37iqKDCdIAJbmtYZ_7fwMHVKz4RUbgbWRE6tvdxoFt2luf9kBTXyJ4Wc1yKdXj7yFykvFPv7zzFnpQHDPK8oainjYZDRxAwENNxpa1VaW6Tifq1R7B8i9trJhVAM9VmJMli1uRq6UmENSHNdFIzrTaF59E" alt="抹茶と季節の主菓子" class="menu-image">
+                <div class="menu-content">
+                    <h3 class="menu-name">抹茶と季節の主菓子</h3>
+                    <p class="menu-desc">京都宇治の上質な抹茶と、職人手作りの練り切りの揃え。</p>
+                    <div class="menu-footer">
+                        <span class="menu-price">¥ 1,200</span>
+                        <button class="btn-add">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="menu-card-wrapper">
+            <div class="menu-card">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxHvWynFIQUyxMmtC-udloEyGYUdfiw3mpqqurDN2XHDbWHCDOhmO5aYdSyIdJcWjEhEQw-9gRNIpPrP7gsfBqQcW5tJp5EkHScpGYhQm2-LMoi3nSdzdXOfjPgbd0aCTcoFDQFJhLA8L4mCOa-fbFMCyXXX_v8hmrRY-y6YEAX4uFBZY7uWb0u1yhbMzKm5v9R6g9tmPM424D7m4hM-nDucu63pTLONzE0lPjZVi-WW5DZEn759LQ8EGubQHiPPuDKYKGFb_vZBo" alt="煎茶と特製みたらし" class="menu-image">
+                <div class="menu-content">
+                    <h3 class="menu-name">煎茶と特製みたらし</h3>
+                    <p class="menu-desc">香り高い八女茶と、香ばしく焼き上げた琥珀色の団子。</p>
+                    <div class="menu-footer">
+                        <span class="menu-price">¥ 950</span>
+                        <button class="btn-add">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="menu-card-wrapper">
+            <div class="menu-card">
+                <img src="https://lh3.googleusercontent.com/aida/AP1WRLutZYZzJ4KLRlS1ATkx50u8lk8_XbnjkaIl-GMjApQyQL0Cq1FXZsRi-JG9iokrui_yziS4LldfgKhzLkGvcK0tXdscnEyFZb5g8fm2qdSs4OYXMhDF8ETVFHmHggE0JdSIfs97sAuoHUk9PVqYq27rIrdOq7ptP7C6B4j-n-dMCHTP6w_CYXCjDHHp7NIAKDGxfhvbIQGST9xFX_hn3mCEQipXARENHp3OdDr1FjjkokY1UEqp2T9Npwc" alt="焙じ茶パフェ" class="menu-image">
+                <div class="menu-content">
+                    <h3 class="menu-name">焙じ茶パフェ</h3>
+                    <p class="menu-desc">香ばしい焙じ茶ゼリーと白玉、自家製あんこの重なり。</p>
+                    <div class="menu-footer">
+                        <span class="menu-price">¥ 1,450</span>
+                        <button class="btn-add">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="menu-card-wrapper">
+            <div class="menu-card">
+                <img src="https://lh3.googleusercontent.com/aida/AP1WRLu25EIhfJVE3w-ABKLtv9npFkiVt4kD2Ao1lOTnkDOzZ9mfzvgMxBAiaWfF13QFS8bm9mcxxPWxMYPi3q2b3sTdSojWFRAAi7qS_HPuj2Rab5VZ4v1CSr_1FKQLv9psJy4YJ5_CftGW2otM2kFQSDxGvwgaUlgVuNuYAjoxR9pWhr5J7fIQMzg-2sRw3sRsGctwo48BtWvogcsum4bhqbD7CTdg06J-vhLx-Jcm9ArUhiVqpK7JGW0C-hc" alt="宇治金時かき氷" class="menu-image">
+                <div class="menu-content">
+                    <span class="badge-seasonal">夏季限定</span>
+                    <h3 class="menu-name">宇治金時かき氷</h3>
+                    <p class="menu-desc">ふんわり氷に濃厚抹茶蜜。</p>
+                    <div class="menu-footer">
+                        <span class="menu-price">¥ 1,100</span>
+                        <button class="btn-add">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <span class="footer-logo">夢前茶屋</span>
+        <div class="footer-nav">
+            <a href="#" class="footer-link">プライバシーポリシー</a>
+            <a href="#" class="footer-link">特定商取引法に基づく表記</a>
+            <a href="#" class="footer-link">採用情報</a>
+        </div>
+        <p class="copyright">© 2024 夢前茶屋 Yumesaki Chaya. All Rights Reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>
