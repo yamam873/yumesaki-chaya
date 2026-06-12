@@ -240,24 +240,3 @@ endif;
  */
 add_filter('show_admin_bar', '__return_false');
 
-/**
- * 固定ページを介さず「/contact/」URLで直接テンプレートを表示するカスタムルート
- */
-add_action('template_redirect', 'yumesaki_custom_contact_route');
-function yumesaki_custom_contact_route()
-{
-	// アクセスされたURLのパスを取得
-	$path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
-
-	// パスが 'contact' の場合、page-contact.phpを読み込んで処理を終了する
-	if ($path === 'contact') {
-		// WordPressが404と判定しているのを200(正常)に上書き
-		global $wp_query;
-		$wp_query->is_404 = false;
-		status_header(200);
-
-		// テンプレートファイルを強制的に読み込む
-		load_template(get_template_directory() . '/page-contact.php');
-		exit;
-	}
-}

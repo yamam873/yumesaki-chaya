@@ -74,6 +74,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.js-reveal').forEach(el => observer.observe(el));
 
+    // ハンバーガーメニュー切り替え
+    const hamburgerBtn = document.querySelector('.js-hamburger');
+    const headerDrawer = document.querySelector('.js-drawer');
+    const navLinks = document.querySelectorAll('.c-header__nav-link');
+
+    if (hamburgerBtn && headerDrawer) {
+        const toggleMenu = () => {
+            const isOpen = hamburgerBtn.classList.contains('is-open');
+            if (isOpen) {
+                hamburgerBtn.classList.remove('is-open');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                headerDrawer.classList.remove('is-open');
+                document.body.style.overflow = ''; // スクロール再開
+            } else {
+                hamburgerBtn.classList.add('is-open');
+                hamburgerBtn.setAttribute('aria-expanded', 'true');
+                headerDrawer.classList.add('is-open');
+                document.body.style.overflow = 'hidden'; // 背面のスクロール防止
+            }
+        };
+
+        hamburgerBtn.addEventListener('click', toggleMenu);
+
+        // リンククリック時にメニューを閉じる
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (hamburgerBtn.classList.contains('is-open')) {
+                    toggleMenu();
+                }
+            });
+        });
+    }
+
     // お知らせ折りたたみ切り替え
     const toggleNewsBtn = document.getElementById('toggle-news-btn');
     const pastNewsContainer = document.getElementById('past-news-container');
