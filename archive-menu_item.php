@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <main class="l-main">
 
-<?php if ( wp_is_mobile() ) : ?>
+<div class="u-hidden-pc">
 
   <!-- ===== MOBILE VERSION (Cinematic Design) ===== -->
   <div class="p-menu">
@@ -73,7 +73,9 @@
     </div>
   </div>
 
-<?php else : ?>
+</div>
+
+<div class="u-hidden-mobile">
 
   <!-- ===== DESKTOP VERSION (Original Design) ===== -->
   <div class="p-menu">
@@ -173,10 +175,10 @@
     </div>
   </div>
 
-<?php endif; ?>
+</div>
 </main>
 
-<?php if ( ! wp_is_mobile() ) : ?>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const featuredImage = document.querySelector('.js-menu-featured-img');
@@ -213,6 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
-<?php endif; ?>
+
 
 <?php get_footer(); ?>

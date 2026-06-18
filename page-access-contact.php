@@ -94,14 +94,33 @@ get_header(); ?>
       </div>
       
       <div class="p-contact-form__box js-reveal">
-        <?php
-        // WordPressの固定ページを使わないため、ここに直接フォームを記述します。
-        // Contact Form 7 を使う場合は以下のコメントアウトを外してIDを指定してください。
-        // echo do_shortcode('[contact-form-7 id="〇〇" title="お問い合わせ"]');
-        ?>
-        <div class="p-contact-form__placeholder">
-          <p>※現在、固定ページを使わずにこのテンプレート（<code>page-contact.php</code>）を直接表示しています。<br>実際のお問い合わせフォームを設置する場合は、このファイル（93行目付近）にHTMLを直接書くか、Contact Form 7等のショートコードをPHPで呼び出してください。</p>
-        </div>
+        <form action="#" method="POST" class="p-contact-form__form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="夢前 太郎" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="example@yumesaki.jp" required>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+          </div>
+
+          <div class="submit-container">
+            <button type="submit" class="btn-submit">
+              Send Message
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+            <span class="note">通常2〜3営業日以内に返信させていただきます。</span>
+          </div>
+        </form>
       </div>
     </div>
   </section>

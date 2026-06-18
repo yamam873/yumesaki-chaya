@@ -70,14 +70,6 @@ Version: 1.0.0
   --radius-xl: 1.5rem;
   --radius-full: 9999px;
 }
-/*
-@media (min-width: 768px) {
-  :root {
-    --text-2xl: 32px;
-    --text-3xl: 40px;
-  }
-}
-*/
 
 /* =========================================================
    2. リセット & ベーススタイル
@@ -158,6 +150,22 @@ button {
 }
 .u-text-shadow {
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* レスポンシブ表示切り替え用 */
+.u-hidden-pc {
+  display: block;
+}
+.u-hidden-mobile {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .u-hidden-pc {
+    display: none;
+  }
+  .u-hidden-mobile {
+    display: block;
+  }
 }
 
 /* レイアウトコンテナ */
@@ -554,11 +562,6 @@ button {
   writing-mode: vertical-rl;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-@media (min-width: 768px) {
-  .p-hero__title {
-    font-size: var(--text-3xl);
-  }
-}
 .p-hero__scroll-icon {
   position: absolute;
   bottom: var(--spacing-base);
@@ -604,11 +607,6 @@ button {
   font-weight: 600;
   color: var(--color-on-surface);
   margin-bottom: var(--spacing-lg);
-}
-@media (min-width: 768px) {
-  .p-concept__title {
-    font-size: var(--text-2xl);
-  }
 }
 .p-concept__text {
   font-size: var(--text-base);
@@ -679,11 +677,6 @@ button {
   color: var(--color-primary);
   line-height: 1.4;
 }
-@media (min-width: 768px) {
-  .p-signature__title {
-    font-size: var(--text-2xl);
-  }
-}
 .p-signature__text {
   color: var(--color-on-surface-variant);
   line-height: 1.8;
@@ -724,11 +717,6 @@ button {
   font-weight: 600;
   color: var(--color-primary);
 }
-@media (min-width: 768px) {
-  .p-news__title {
-    font-size: var(--text-2xl);
-  }
-}
 .p-news__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -741,10 +729,15 @@ button {
 }
 .p-news__item {
   background-color: var(--color-surface-container-low);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-sm);
   border-radius: var(--radius-xl);
   border: 1px solid rgba(130, 117, 99, 0.05);
   transition: all 0.3s;
+}
+@media (min-width: 768px) {
+  .p-news__item {
+    padding: var(--spacing-lg);
+  }
 }
 .p-news__item:hover {
   border-color: rgba(130, 117, 99, 0.2);
@@ -887,7 +880,12 @@ button {
 }
 
 .p-menu__header {
-  margin-bottom: var(--spacing-xl);
+  margin: 0;
+}
+@media (min-width: 1024px) {
+  .p-menu__header {
+    margin-bottom: var(--spacing-xl);
+  }
 }
 .p-menu__divider {
   width: 64px;
@@ -902,11 +900,6 @@ button {
   letter-spacing: 0.15em;
   margin-bottom: var(--spacing-base);
 }
-@media (min-width: 768px) {
-  .p-menu__title {
-    font-size: var(--text-3xl);
-  }
-}
 .p-menu__desc {
   font-size: var(--text-base);
   color: var(--color-on-surface-variant);
@@ -917,7 +910,7 @@ button {
 .p-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 15vh;
+  gap: 10vh;
 }
 
 .p-menu-item {
@@ -968,11 +961,6 @@ button {
   font-size: var(--text-2xl);
   font-weight: 600;
   color: var(--color-primary);
-}
-@media (min-width: 768px) {
-  .p-menu-item__name {
-    font-size: var(--text-2xl);
-  }
 }
 .p-menu-item__price {
   font-family: var(--font-headline);
@@ -1051,14 +1039,13 @@ button {
   display: flex;
   align-items: flex-start; /* 中央揃えではなく上揃えに変更 */
   justify-content: center;
-  padding: var(--spacing-lg-plus) var(--spacing-lg);
+  padding: var(--spacing-xl) var(--spacing-lg);
   order: 2;
 }
 @media (min-width: 1024px) {
   .p-contact-hero__text-col {
     align-items: center; /* PC版は縦中央揃えを維持 */
     padding: var(--margin-desktop);
-    order: 2;
   }
 }
 .p-contact-hero__img-col {
@@ -1106,7 +1093,7 @@ button {
 }
 
 .p-contact-info {
-  padding-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg-plus);
   background-color: var(--color-background);
 }
 @media (min-width: 1024px) {
@@ -1221,15 +1208,9 @@ button {
 }
 
 .p-contact-form {
-  padding-top: var(--spacing-lg-plus);
-  padding-bottom: var(--spacing-md);
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
   background-color: var(--color-surface-container-low);
-}
-@media (min-width: 1024px) {
-  .p-contact-form {
-    padding-top: var(--spacing-xl);
-    padding-bottom: var(--spacing-xl);
-  }
 }
 .p-contact-form__header {
   text-align: center;
@@ -1278,47 +1259,122 @@ button {
   border-radius: var(--radius-md);
 }
 
-/* CF7 adjustments */
-.wpcf7-form-control-wrap {
-  display: block;
-  margin-top: 4px;
-}
-.wpcf7-text,
-.wpcf7-textarea {
+/* --- お問い合わせフォーム (カスタム要素) --- */
+.p-contact-form__form {
   width: 100%;
-  background-color: transparent;
+}
+
+.form-row {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: 32px;
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  margin-bottom: var(--spacing-lg);
+}
+
+.p-contact-form__form label {
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+  margin-bottom: var(--spacing-base);
+}
+
+.p-contact-form__form input[type="text"],
+.p-contact-form__form input[type="email"],
+.p-contact-form__form textarea {
+  width: 100%;
+  padding: 12px 0;
   border: none;
   border-bottom: 1px solid rgba(125, 87, 0, 0.4);
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  padding: var(--spacing-sm) 0;
-  transition: all 0.3s;
-}
-.wpcf7-text:focus,
-.wpcf7-textarea:focus {
+  background: transparent;
+  font-family: inherit;
+  font-size: var(--text-sm);
+  color: var(--color-on-surface);
   outline: none;
-  border-bottom-color: var(--color-secondary);
+  transition: border-color 0.3s ease;
 }
-.wpcf7-submit {
+
+.p-contact-form__form input::placeholder,
+.p-contact-form__form textarea::placeholder {
+  color: var(--color-outline-variant);
+  opacity: 1;
+}
+
+.p-contact-form__form input:focus,
+.p-contact-form__form textarea:focus {
+  border-bottom-color: var(--color-primary);
+}
+
+.p-contact-form__form textarea {
+  resize: none;
+  height: 120px;
+}
+
+.submit-container {
+  text-align: center;
+}
+
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   width: 100%;
+  padding: 18px 24px;
   background-color: var(--color-primary);
-  color: var(--color-on-primary);
   border: none;
   border-radius: var(--radius-md);
-  padding: var(--spacing-md);
-  font-size: var(--text-xl);
+  color: var(--color-on-primary);
   font-family: var(--font-headline);
+  font-size: var(--text-base);
+  font-weight: 600;
+  letter-spacing: 0.1em;
   cursor: pointer;
-  transition: all 0.3s;
-  margin-top: var(--spacing-lg);
+  transition: all 0.5s ease;
+  text-transform: uppercase;
 }
-.wpcf7-submit:hover {
+
+.btn-submit:hover {
   background-color: var(--color-primary-container);
   color: var(--color-on-primary-container);
 }
 
+.btn-submit svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.5s ease;
+}
+
+.btn-submit:hover svg {
+  transform: translateX(16px);
+}
+
+.p-contact-form__form .note {
+  display: block;
+  margin-top: var(--spacing-md);
+  font-size: var(--text-xs);
+  color: var(--color-on-surface-variant);
+  opacity: 0.8;
+}
+
 /* =========================================================
-   8. Animations
+   8. アニメーション
    ========================================================= */
 .js-reveal {
   opacity: 0;
@@ -1331,7 +1387,7 @@ button {
 }
 
 /* =========================================================
-   9. WP Plugins / Misc
+   9. WP プラグイン / その他
    ========================================================= */
 /* Contact Form 7 等で出力される reCAPTCHA バッジを非表示にする */
 .grecaptcha-badge {
@@ -1447,7 +1503,7 @@ button {
 
 /* モバイル版の余白調整用モディファイア */
 .p-menu__content--mobile-header {
-  padding-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-xl);
 }
 .p-menu__content--mobile-footer {
   padding-top: var(--spacing-sm);
