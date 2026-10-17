@@ -1,0 +1,24 @@
+# ===== yumesaki-chaya theme =====
+# 秘密情報
+.env
+.env.*
+wp-config.php
+*.pem
+*.key
+
+# 依存パッケージ
+node_modules/
+vendor/
+
+# バックアップ・圧縮・DB
+*.zip
+*.sql
+*.wpress
+*.log
+
+# OS・エディタのゴミ
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
